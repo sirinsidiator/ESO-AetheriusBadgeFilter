@@ -114,28 +114,28 @@ function FilterWindow:InitializeButtons()
         local Update = AetheriusBadgeFilter.Update
         ClearMenu()
 
-        AddMenuItem("Refresh Badges", Update)
+        AddCustomMenuItem("Refresh Badges", Update)
 
         if(saveData.showScannedBadges) then
-            AddMenuItem("Show Defined Badges", function()
+            AddCustomMenuItem("Show Defined Badges", function()
                 saveData.showScannedBadges = false
                 Update()
             end)
         else
-            AddMenuItem("Show Scanned Badges", function()
+            AddCustomMenuItem("Show Scanned Badges", function()
                 saveData.showScannedBadges = true
                 Update()
             end)
         end
 
         if(self:IsLocked()) then
-            AddMenuItem("Unlock Window", function() self:Unlock() end)
+            AddCustomMenuItem("Unlock Window", function() self:Unlock() end)
         else
-            AddMenuItem("Lock Window", function() self:Lock() end)
-            AddMenuItem("Reset Window", function() self:ResetPosition() end)
+            AddCustomMenuItem("Lock Window", function() self:Lock() end)
+            AddCustomMenuItem("Reset Window", function() self:ResetPosition() end)
         end
 
-        AddMenuItem("Hide Window", function()
+        AddCustomMenuItem("Hide Window", function()
             self:Disable()
         end)
 
