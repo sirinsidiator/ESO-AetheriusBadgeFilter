@@ -39,17 +39,24 @@ function BadgeFilter:CollectBadges(forced)
             local _, note = GetGuildMemberInfo(guildId, i)
             local badges = self:ParseBadges(note)
             for j = 1, #badges do
-                badgeTable[badges[j]] = true
+                local badge = badges[j]
+                badgeTable[badge] = (badgeTable[badge] or 0) + 1
             end
         end
 
         local currentData = self.currentGuild
         local badgeTypes = currentData.badges
+
+        for _, badgeData in pairs(badgeTypes) do
+            badgeData.count = 0
+        end
+
         local collected = {}
-        for badge in pairs(badgeTable) do
+        for badge, count in pairs(badgeTable) do
             local name = self:GetBadgeName(badge)
             local badgeData = badgeTypes[name] or CreateBadgeEntry(name)
             badgeData.badge = badge
+            badgeData.count = count
             collected[#collected + 1] = badgeData
         end
 

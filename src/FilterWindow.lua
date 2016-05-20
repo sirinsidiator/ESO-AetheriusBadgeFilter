@@ -156,7 +156,7 @@ function FilterWindow:InitializeScrollList(listControl, filter)
     local function InitializeBadgeRow(rowControl, entry)
         local nameControl = rowControl:GetNamedChild("Name")
         local name = entry.badge or entry.name
-        nameControl:SetText(name)
+        nameControl:SetText(string.format("%s (%d)", name, entry.count))
 
         local highlight = rowControl:GetNamedChild("Highlight")
         if not highlight.animation then
