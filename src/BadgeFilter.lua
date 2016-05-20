@@ -29,8 +29,8 @@ local function SortByNameAsc(a, b)
     return a.name < b.name
 end
 
-function BadgeFilter:CollectBadges()
-    if(self.dirty) then
+function BadgeFilter:CollectBadges(forced)
+    if(self.dirty or forced) then
         self:ClearAll()
 
         local badgeTable = {}
