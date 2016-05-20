@@ -4,7 +4,7 @@ AetheriusBadgeFilter:RegisterGuild("Your Guild Name", {
             {
                 name = "MyBadge", -- mandatory field, this name must match what is used in the badge list
                 description = "My Description", -- optional, shows a tooltip when hovering the mouse over the entry in the filter list
-                color = "FF0000", -- optional, if not specified it will use the first color found in the notes, or the normal text color if the badge is not in use
+                color = "FF0000", -- optional, if not specified it will use the first color found in the notes, or a grey color if the badge is not in use
                 relations = {"MyOtherBadge"}, -- optional, allows to show other badges simultaneously when this badge is selected
             },
             {

@@ -53,9 +53,11 @@ function BadgeFilter:CollectBadges(forced)
 
         local collected = {}
         for badge, count in pairs(badgeTable) do
-            local name = self:GetBadgeName(badge)
+            local name, color = self:GetBadgeNameAndColor(badge)
             local badgeData = badgeTypes[name] or CreateBadgeEntry(name)
-            badgeData.badge = badge
+            if(not badgeData.color) then
+                badgeData.color = color
+            end
             badgeData.count = count
             collected[#collected + 1] = badgeData
         end
@@ -74,8 +76,9 @@ function BadgeFilter:ParseBadges(note)
     return badges
 end
 
-function BadgeFilter:GetBadgeName(badge)
-    return badge:gsub("|c......(.-)|r", "%1")
+function BadgeFilter:GetBadgeNameAndColor(badge)
+    local color, name = badge:match("|c(......)(.-)|r")
+    return name, color
 end
 
 function BadgeFilter:GetListEntries()
@@ -86,7 +89,7 @@ end
 function BadgeFilter:HasSelectedBadge(note)
     local badges = self:ParseBadges(note)
     for i = 1, #badges do
-        local name = self:GetBadgeName(badges[i])
+        local name = self:GetBadgeNameAndColor(badges[i])
         if(self.filteredBadge[name]) then return true end
         local relations = self.currentGuild.relations
         if(relations[name]) then
