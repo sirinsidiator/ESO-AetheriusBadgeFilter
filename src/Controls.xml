@@ -1,0 +1,65 @@
+<GuiXml>
+    <Controls>
+        <Control name="AetheriusBadgeFilterGroupTemplate" mouseEnabled="true" tier="MEDIUM" layer="CONTROLS" virtual="true">
+            <Dimensions y="30" />
+
+            <Controls>
+                <Label name="$(parent)Name" font="ZoFontGameShadow" wrapMode="ELLIPSIS" color="INTERFACE_COLOR_TYPE_TEXT_COLORS:INTERFACE_TEXT_COLOR_NORMAL">
+                    <Dimensions y="24" />
+                    <Anchor point="LEFT" />
+                    <Anchor point="RIGHT" />
+                </Label>
+                <Texture name="$(parent)Line" inherits="ZO_HorizontalDivider">
+                    <Dimensions x="600" y="6" />
+                    <Anchor point="BOTTOMRIGHT" />
+                </Texture>
+            </Controls>
+        </Control>
+
+        <Control name="AetheriusBadgeFilterBadgeTemplate" mouseEnabled="true" tier="MEDIUM" layer="CONTROLS" virtual="true">
+            <Dimensions y="24" />
+
+            <Controls>
+                <Texture name="$(parent)Bg" textureFile="EsoUI/Art/Miscellaneous/listItem_backdrop.dds">
+                    <AnchorFill />
+                    <TextureCoords left="0" right="1" top="0" bottom=".8125" />
+                </Texture>
+
+                <Texture name="$(parent)Highlight" textureFile="EsoUI/Art/Miscellaneous/listItem_highlight.dds" alpha="0">
+                    <AnchorFill />
+                    <TextureCoords left="0" right="1" top="0" bottom=".625" />
+                </Texture>
+
+                <Label name="$(parent)Name" font="ZoFontGameShadow" wrapMode="ELLIPSIS" color="INTERFACE_COLOR_TYPE_TEXT_COLORS:INTERFACE_TEXT_COLOR_DEFAULT_TEXT">
+                    <Dimensions y="24" />
+                    <Anchor point="LEFT" offsetX="18" />
+                    <Anchor point="RIGHT" />
+                </Label>
+            </Controls>
+        </Control>
+
+        <TopLevelControl name="AetheriusBadgeFilterList" mouseEnabled="true" hidden="true">
+            <Dimensions x="300" y="600" />
+            <Anchor point="TOPRIGHT" relativeTo="ZO_GuildRoster" relativePoint="TOPLEFT" offsetX="-20" />
+            <Controls>
+                <Label name="$(parent)Label" font="ZoFontWinH3" wrapMode="ELLIPSIS" text="Badge Filter">
+                    <Anchor point="TOPLEFT" offsetX="25" offsetY="10" />
+                </Label>
+
+                <Control name="$(parent)Badges" inherits="ZO_ScrollList">
+                    <Anchor point="TOPLEFT" relativeTo="$(parent)Label" relativePoint="BOTTOMLEFT" offsetY="5" />
+                    <Anchor point="BOTTOMRIGHT" relativeTo="$(parent)" relativePoint="BOTTOMRIGHT" offsetX="-25" offsetY="-10" />
+                </Control>
+
+                <Backdrop name="$(parent)Bg" integralWrapping="true">
+                    <Anchor point="TOPLEFT" offsetX="-4" offsetY="-4" />
+                    <Anchor point="BOTTOMRIGHT" offsetX="4" offsetY="4" />
+
+                    <Edge file="EsoUI/Art/ChatWindow/chat_BG_edge.dds" edgeFileWidth="256" edgeFileHeight="256" edgeSize="32" />
+                    <Center file="EsoUI/Art/ChatWindow/chat_BG_center.dds" />
+                    <Insets left="32" top="32" right="-32" bottom="-32" />
+                </Backdrop>
+            </Controls>
+        </TopLevelControl>
+    </Controls>
+</GuiXml>
