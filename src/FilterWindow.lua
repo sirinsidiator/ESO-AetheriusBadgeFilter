@@ -95,7 +95,7 @@ function FilterWindow:Enable()
     self.control:SetHidden(false)
     self.toggleWindowButton:SetNormalTexture(BUTTON_PRESSED_TEXTURE)
     self.toggleWindowButton:SetPressedTexture(BUTTON_NORMAL_TEXTURE)
-    AetheriusBadgeFilter.RefreshFilter()
+    AetheriusBadgeFilter.Update()
 end
 
 function FilterWindow:Disable()

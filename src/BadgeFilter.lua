@@ -18,6 +18,7 @@ end
 function BadgeFilter:SetGuild(guildId)
     self.currentGuildId = guildId
     self.currentGuild = self.guilds[GetGuildName(guildId)]
+    self.dirty = true
 end
 
 function BadgeFilter:HasBadges()
@@ -28,31 +29,34 @@ local function SortByNameAsc(a, b)
     return a.name < b.name
 end
 
-function BadgeFilter:CollectBadges(guildId)
-    self:ClearAll()
+function BadgeFilter:CollectBadges()
+    if(self.dirty) then
+        self:ClearAll()
 
-    local badgeTable = {}
-    local guildId = self.currentGuildId
-    for i = 1, GetNumGuildMembers(guildId) do
-        local _, note = GetGuildMemberInfo(guildId, i)
-        local badges = self:ParseBadges(note)
-        for j = 1, #badges do
-            badgeTable[badges[j]] = true
+        local badgeTable = {}
+        local guildId = self.currentGuildId
+        for i = 1, GetNumGuildMembers(guildId) do
+            local _, note = GetGuildMemberInfo(guildId, i)
+            local badges = self:ParseBadges(note)
+            for j = 1, #badges do
+                badgeTable[badges[j]] = true
+            end
         end
-    end
 
-    local currentData = self.currentGuild
-    local badgeTypes = currentData.badges
-    local collected = {}
-    for badge in pairs(badgeTable) do
-        local name = self:GetBadgeName(badge)
-        local badgeData = badgeTypes[name] or CreateBadgeEntry(name)
-        badgeData.badge = badge
-        collected[#collected + 1] = badgeData
-    end
+        local currentData = self.currentGuild
+        local badgeTypes = currentData.badges
+        local collected = {}
+        for badge in pairs(badgeTable) do
+            local name = self:GetBadgeName(badge)
+            local badgeData = badgeTypes[name] or CreateBadgeEntry(name)
+            badgeData.badge = badge
+            collected[#collected + 1] = badgeData
+        end
 
-    table.sort(collected, SortByNameAsc)
-    currentData.collected = collected
+        table.sort(collected, SortByNameAsc)
+        currentData.collected = collected
+        self.dirty = false
+    end
 end
 
 function BadgeFilter:ParseBadges(note)

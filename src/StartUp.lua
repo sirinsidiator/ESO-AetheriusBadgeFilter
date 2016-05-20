@@ -92,10 +92,6 @@ OnAddonLoaded(function()
     local listControl = AetheriusBadgeFilterWindowFilterList
     local r, g, b = ZO_TOOLTIP_DEFAULT_COLOR:UnpackRGB()
 
-    AetheriusBadgeFilter.RefreshFilter = function()
-        guildRoster:RefreshFilters()
-    end
-
     local defaultData = {
         version = 1,
         enabled = true,
@@ -112,8 +108,31 @@ OnAddonLoaded(function()
     AetheriusBadgeFilter_Data[GetDisplayName()] = saveData
     AetheriusBadgeFilter.defaultData = defaultData
 
-    local window = AetheriusBadgeFilter.FilterWindow:New(AetheriusBadgeFilterWindow, saveData, defaultData)
+    AetheriusBadgeFilter.RefreshFilter = function(clearSelection)
+        guildRoster:RefreshFilters()
+    end
+    AetheriusBadgeFilter.Update = function() end
+
     local filter = AetheriusBadgeFilter.BadgeFilter:New(AetheriusBadgeFilter.guilds, saveData)
+    local window = AetheriusBadgeFilter.FilterWindow:New(AetheriusBadgeFilterWindow, saveData, defaultData)
+
+    local function Update()
+        if(guildRosterScene:IsShowing() and filter:HasBadges() and window:IsEnabled()) then
+            filter:CollectBadges()
+
+            local scrollData = ZO_ScrollList_GetDataList(listControl)
+            ZO_ScrollList_Clear(listControl)
+
+            local list = filter:GetListEntries()
+            for _, entry in ipairs(list) do
+                scrollData[#scrollData + 1] = ZO_ScrollList_CreateDataEntry(entry.type, ZO_ShallowTableCopy(entry))
+            end
+
+            ZO_ScrollList_Commit(listControl)
+            guildRoster:RefreshFilters()
+        end
+    end
+    AetheriusBadgeFilter.Update = Update
 
     local function HandleFilterEntryClicked(entry, shift)
         if(not shift) then
@@ -201,19 +220,6 @@ OnAddonLoaded(function()
     ZO_ScrollList_AddDataType(listControl, BADGE_ENTRY, "AetheriusBadgeFilterBadgeTemplate", 24, InitializeBadgeRow, nil, nil, DestroyBadgeRow)
     ZO_ScrollList_AddResizeOnScreenResize(listControl)
 
-    local function RefreshBadgeList()
-        local scrollData = ZO_ScrollList_GetDataList(listControl)
-        ZO_ScrollList_Clear(listControl)
-
-        local list = filter:GetListEntries()
-        for _, entry in ipairs(list) do
-            scrollData[#scrollData + 1] = ZO_ScrollList_CreateDataEntry(entry.type, ZO_ShallowTableCopy(entry))
-        end
-
-        ZO_ScrollList_Commit(listControl)
-        guildRoster:RefreshFilters()
-    end
-
     local currentSearchTerm, hasActiveFilteredBadges
     local originalGetSearchTerm = guildRoster.searchBox.GetText
     guildRoster.searchBox.GetText = function(control)
@@ -231,14 +237,6 @@ OnAddonLoaded(function()
 
         return originalIsMatch(self, currentSearchTerm, data)
     end
-
-    local function Update()
-        if(guildRosterScene:IsShowing() and filter:HasBadges() and window:IsEnabled()) then
-            filter:CollectBadges()
-            RefreshBadgeList()
-        end
-    end
-    AetheriusBadgeFilter.Update = Update
 
     SLASH_COMMANDS["/abf"] = function()
         saveData.showScannedBadges = not saveData.showScannedBadges
