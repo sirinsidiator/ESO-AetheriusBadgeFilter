@@ -77,33 +77,50 @@ function AetheriusBadgeFilter:RegisterGuild(name, data)
     }
 end
 
+function AetheriusBadgeFilter.CreateBadgeEntry(name)
+    return  {
+        name = name,
+        type = BADGE_ENTRY,
+    }
+end
+
 OnAddonLoaded(function()
     local guilds = AetheriusBadgeFilter.guilds
     local guildRosterManager = GUILD_ROSTER_MANAGER
     local guildRoster = GUILD_ROSTER_KEYBOARD
     local guildRosterScene = SCENE_MANAGER:GetScene("guildRoster")
-    local window = AetheriusBadgeFilterList
-    local listControl = window:GetNamedChild("Badges")
-    local showAllBadges = false
-    local currentData
-    local filteredBadge = {}
+    local listControl = AetheriusBadgeFilterWindowFilterList
     local r, g, b = ZO_TOOLTIP_DEFAULT_COLOR:UnpackRGB()
 
-    local function DeselectAll()
-        local scrollData = ZO_ScrollList_GetDataList(listControl)
-        for _, entry in pairs(scrollData) do
-            entry.data.selected = false
-        end
-        filteredBadge = {}
+    AetheriusBadgeFilter.RefreshFilter = function()
+        guildRoster:RefreshFilters()
     end
 
+    local defaultData = {
+        version = 1,
+        enabled = true,
+        locked = true,
+        showScannedBadges = false,
+        x = 680,
+        y = 225,
+        width = 300,
+        height = 600,
+    }
+
+    AetheriusBadgeFilter_Data = AetheriusBadgeFilter_Data or {}
+    local saveData = AetheriusBadgeFilter_Data[GetDisplayName()] or ZO_DeepTableCopy(defaultData)
+    AetheriusBadgeFilter_Data[GetDisplayName()] = saveData
+    AetheriusBadgeFilter.defaultData = defaultData
+
+    local window = AetheriusBadgeFilter.FilterWindow:New(AetheriusBadgeFilterWindow, saveData, defaultData)
+    local filter = AetheriusBadgeFilter.BadgeFilter:New(AetheriusBadgeFilter.guilds, saveData)
+
     local function HandleFilterEntryClicked(entry, shift)
-        local wasSelected = entry.selected
         if(not shift) then
-            DeselectAll()
+            filter:ClearAll()
         end
-        entry.selected = not wasSelected
-        filteredBadge[entry.name] = entry.selected
+        local selected = filter:GetBadge(entry.name)
+        filter:SetBadge(entry.name, not selected)
         PlaySound("Click")
         guildRoster:RefreshFilters()
         ZO_ScrollList_RefreshVisible(listControl)
@@ -149,7 +166,7 @@ OnAddonLoaded(function()
             highlight.animation = ANIMATION_MANAGER:CreateTimelineFromVirtual("ShowOnMouseOverLabelAnimation", highlight)
         end
 
-        local alpha = entry.selected and 0.5 or 0
+        local alpha = filter:GetBadge(entry.name) and 0.5 or 0
         highlight:SetAlpha(alpha)
         highlight.animation:GetFirstAnimation():SetAlphaValues(alpha, 1)
 
@@ -188,131 +205,54 @@ OnAddonLoaded(function()
         local scrollData = ZO_ScrollList_GetDataList(listControl)
         ZO_ScrollList_Clear(listControl)
 
-        local list = showAllBadges and currentData.collected or currentData.entries
+        local list = filter:GetListEntries()
         for _, entry in ipairs(list) do
             scrollData[#scrollData + 1] = ZO_ScrollList_CreateDataEntry(entry.type, ZO_ShallowTableCopy(entry))
         end
 
         ZO_ScrollList_Commit(listControl)
-    end
-
-    local function GetGuildIdByName(guildName)
-        for i = 1, GetNumGuilds() do
-            local guildId = GetGuildId(i)
-            if(GetGuildName(guildId) == guildName) then
-                return guildId
-            end
-        end
-    end
-
-    local function ParseBadges(note)
-        local badges = {}
-        for badge in note:gmatch("|c.......-|r") do
-            badges[#badges + 1] = badge
-        end
-        return badges
-    end
-
-    local function GetBadgeName(badge)
-        return badge:gsub("|c......(.-)|r", "%1")
-    end
-
-    local function HasSelectedBadge(note)
-        local badges = ParseBadges(note)
-        for i = 1, #badges do
-            local name = GetBadgeName(badges[i])
-            if(filteredBadge[name]) then return true end
-            local relations = currentData.relations
-            if(relations[name]) then
-                for _, relatedName in ipairs(relations[name]) do
-                    if(filteredBadge[relatedName]) then return true end
-                end
-            end
-        end
-        return false
-    end
-
-    local function HasFilteredBadges()
-        for badge, state in pairs(filteredBadge) do
-            if(state) then
-                return true
-            end
-        end
-        return false
+        guildRoster:RefreshFilters()
     end
 
     local currentSearchTerm, hasActiveFilteredBadges
     local originalGetSearchTerm = guildRoster.searchBox.GetText
     guildRoster.searchBox.GetText = function(control)
         currentSearchTerm = originalGetSearchTerm(control)
-        if(window:IsHidden()) then return currentSearchTerm end
-        hasActiveFilteredBadges = HasFilteredBadges()
+        if(not window:IsEnabled()) then return currentSearchTerm end
+        hasActiveFilteredBadges = filter:IsAnyBadgeSelected()
         return "\1" -- avoid the empty string check in FilterScrollList so IsMatch is called
     end
 
     local originalIsMatch = guildRosterManager.IsMatch
     guildRosterManager.IsMatch = function(self, searchTerm, data)
-        if(not window:IsHidden() and hasActiveFilteredBadges and not HasSelectedBadge(data.note)) then
+        if(window:IsEnabled() and hasActiveFilteredBadges and not filter:HasSelectedBadge(data.note)) then
             return false
         end
 
         return originalIsMatch(self, currentSearchTerm, data)
     end
 
-    local function SortByNameAsc(a, b)
-        return a.name < b.name
-    end
-
-    local function CollectBadges(guildId)
-        local badgeTable = {}
-        for i = 1, GetNumGuildMembers(guildId) do
-            local _, note = GetGuildMemberInfo(guildId, i)
-            local badges = ParseBadges(note)
-            for j = 1, #badges do
-                badgeTable[badges[j]] = true
-            end
-        end
-
-        local badgeTypes = currentData.badges
-        local collected = {}
-        for badge in pairs(badgeTable) do
-            local name = GetBadgeName(badge)
-            local badgeData = badgeTypes[name] or {
-                name = name,
-                type = BADGE_ENTRY,
-            }
-            badgeData.badge = badge
-            collected[#collected + 1] = badgeData
-        end
-
-        table.sort(collected, SortByNameAsc)
-        currentData.collected = collected
-        RefreshBadgeList()
-        guildRoster:RefreshFilters()
-    end
-
     local function Update()
-        if(guildRosterScene:IsShowing()) then
-            filteredBadge = {}
-            local guildName = guildRosterManager.guildName
-            currentData = guilds[guildName]
-            window:SetHidden(currentData == nil)
-            if(not window:IsHidden()) then
-                local guildId = GetGuildIdByName(guildName)
-                if(guildId) then
-                    CollectBadges(guildId)
-                end
-            end
-        else
-            window:SetHidden(true)
+        if(guildRosterScene:IsShowing() and filter:HasBadges() and window:IsEnabled()) then
+            filter:CollectBadges()
+            RefreshBadgeList()
         end
     end
+    AetheriusBadgeFilter.Update = Update
 
     SLASH_COMMANDS["/abf"] = function()
-        showAllBadges = not showAllBadges
+        saveData.showScannedBadges = not saveData.showScannedBadges
         Update()
     end
 
     guildRosterScene:RegisterCallback("StateChange", Update)
-    ZO_PreHook(guildRosterManager, "OnGuildIdChanged", Update)
+    ZO_PreHook(guildRosterManager, "OnGuildIdChanged", function(self)
+        filter:SetGuild(self.guildId)
+        if(filter:HasBadges()) then
+            window:AddToScene(guildRosterScene)
+            Update()
+        else
+            window:RemoveFromScene(guildRosterScene)
+        end
+    end)
 end)
