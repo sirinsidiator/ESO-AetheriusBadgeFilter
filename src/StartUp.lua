@@ -115,9 +115,32 @@ OnAddonLoaded(function()
         return originalIsMatch(self, currentSearchTerm, data)
     end
 
-    SLASH_COMMANDS["/abf"] = function()
-        saveData.showScannedBadges = not saveData.showScannedBadges
-        window:Update()
+    SLASH_COMMANDS["/abf"] = function(command)
+        if(command == "show") then
+            window:Enable()
+        elseif(command == "hide") then
+            window:Disable()
+        elseif(command == "mode") then
+            saveData.showScannedBadges = not saveData.showScannedBadges
+            window:Update()
+        elseif(command == "reset") then
+            window:ResetPosition()
+        elseif(command == "lock") then
+            window:Lock()
+        elseif(command == "unlock") then
+            window:Unlock()
+        elseif(command == "refresh") then
+            window:Update(true)
+        elseif(command == "help") then
+            d("[AetheriusBadgeFilter] Available /abf commands: show, hide, toggle, lock, unlock, mode, refresh, reset, help; default: toggle")
+        else
+            -- toggle
+            if(window:IsEnabled()) then
+                window:Disable()
+            else
+                window:Enable()
+            end
+        end
     end
 
     guildRosterScene:RegisterCallback("StateChange", function() window:Update() end)
