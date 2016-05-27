@@ -143,14 +143,16 @@ OnAddonLoaded(function()
         end
     end
 
-    guildRosterScene:RegisterCallback("StateChange", function() window:Update() end)
-    ZO_PreHook(guildRosterManager, "OnGuildIdChanged", function(self)
-        filter:SetGuild(self.guildId)
+    local function Update()
+        filter:SetGuild(guildRosterManager.guildId)
         if(filter:HasBadges()) then
             window:AddToScene(guildRosterScene)
             window:Update()
         else
             window:RemoveFromScene(guildRosterScene)
         end
-    end)
+    end
+
+    guildRosterScene:RegisterCallback("StateChange", Update)
+    ZO_PreHook(guildRosterManager, "OnGuildIdChanged", Update)
 end)
