@@ -91,6 +91,10 @@ AetheriusBadgeFilter:RegisterGuild("Aetherius Trade", {
                 description = "Has broken guild rules. A notification has been sent via mail.",
             },
             {
+                name = "Novice",
+                description = "New in guild.",
+            },
+            {
                 name = "Way Out",
                 description = "Has ignored the guild rules and all notifications. Will be kicked if we need space for new members.",
             },
