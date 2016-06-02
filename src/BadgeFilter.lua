@@ -3,6 +3,8 @@ local CreateBadgeEntry = AetheriusBadgeFilter.CreateBadgeEntry
 local BadgeFilter = ZO_Object:Subclass()
 AetheriusBadgeFilter.BadgeFilter = BadgeFilter
 
+local BADGE_FILTER_NAME_PATTERN = "Aetherius.?Badge.?Filter"
+
 function BadgeFilter:New(...)
     local obj = ZO_Object.New(self)
     obj:Initialize(...)
@@ -13,15 +15,35 @@ function BadgeFilter:Initialize(guilds, saveData)
     self.guilds = guilds
     self.saveData = saveData
     self.filteredBadge = {}
+    self.checkedGuilds = {}
 end
 
 function BadgeFilter:SetGuild(guildId)
     self.currentGuildId = guildId
-    self.currentGuild = self.guilds[GetGuildName(guildId)]
+    local guildName = GetGuildName(guildId)
+    self.currentGuild = self.guilds[guildName]
+    if(not self.currentGuild) then
+        self.currentGuild = self:CheckGuildInfo(guildId)
+    end
     self.dirty = true
 end
 
-function BadgeFilter:HasBadges()
+function BadgeFilter:IsCurrentGuild(guildId)
+    return self.currentGuildId == guildId
+end
+
+function BadgeFilter:CheckGuildInfo(guildId, force)
+    local guildName = GetGuildName(guildId)
+    if(not self.checkedGuilds[guildName] or force) then
+        self.checkedGuilds[guildName] = true
+        if(GetGuildDescription(guildId):find(BADGE_FILTER_NAME_PATTERN) or GetGuildMotD(guildId):find(BADGE_FILTER_NAME_PATTERN)) then
+            AetheriusBadgeFilter:RegisterGuild(guildName)
+            return self.guilds[guildName]
+        end
+    end
+end
+
+function BadgeFilter:SupportsBadges()
     return self.currentGuild ~= nil
 end
 
@@ -83,7 +105,7 @@ end
 
 function BadgeFilter:GetListEntries()
     local saveData, currentData = self.saveData, self.currentGuild
-    return saveData.showScannedBadges and currentData.collected or currentData.entries
+    return (saveData.showScannedBadges or #currentData.entries == 0) and currentData.collected or currentData.entries
 end
 
 function BadgeFilter:HasSelectedBadge(note)
@@ -127,4 +149,8 @@ function BadgeFilter:GetBadge(name)
         return true
     end
     return false
+end
+
+function BadgeFilter:GetFilteredCount()
+    return NonContiguousCount(self.filteredBadge)
 end

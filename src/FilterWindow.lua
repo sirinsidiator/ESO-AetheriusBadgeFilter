@@ -80,6 +80,18 @@ function FilterWindow:InitializeButtons(saveData)
             end)
         end
 
+        if(saveData.showMemberCount) then
+            AddCustomMenuItem("Hide Member Count", function()
+                saveData.showMemberCount = false
+                self:Update()
+            end)
+        else
+            AddCustomMenuItem("Show Member Count", function()
+                saveData.showMemberCount = true
+                self:Update()
+            end)
+        end
+
         if(self:IsLocked()) then
             AddCustomMenuItem("Unlock Window", function() self:Unlock() end)
         else
@@ -133,6 +145,8 @@ local function ShowTooltip(rowControl, name, description)
 end
 
 function FilterWindow:InitializeScrollList(listControl, filter)
+    local saveData = self.saveData
+
     local function InitializeGroupRow(rowControl, entry)
         local nameControl = rowControl:GetNamedChild("Name")
         nameControl:SetText(entry.name)
@@ -159,7 +173,11 @@ function FilterWindow:InitializeScrollList(listControl, filter)
         if(entry.color) then
             name = string.format("|c%s%s|r", entry.color, name)
         end
-        nameControl:SetText(string.format("%s (%d)", name, entry.count))
+        if(saveData.showMemberCount) then
+            nameControl:SetText(string.format("%s (%d)", name, entry.count))
+        else
+            nameControl:SetText(name)
+        end
 
         local highlight = rowControl:GetNamedChild("Highlight")
         if not highlight.animation then
@@ -185,10 +203,13 @@ function FilterWindow:InitializeScrollList(listControl, filter)
 
         rowControl:SetHandler("OnMouseUp", function(control, button, isInside, ctrl, alt, shift, command)
             if(isInside and button == MOUSE_BUTTON_INDEX_LEFT) then
+                local selected = filter:GetBadge(entry.name)
                 if(not shift) then
+                    if(filter:GetFilteredCount() > 1) then
+                        selected = false
+                    end
                     filter:ClearAll()
                 end
-                local selected = filter:GetBadge(entry.name)
                 filter:SetBadge(entry.name, not selected)
                 PlaySound("Click")
                 RefreshFilters()
@@ -207,11 +228,14 @@ function FilterWindow:InitializeScrollList(listControl, filter)
     ZO_ScrollList_AddDataType(listControl, GROUP_ENTRY, "AetheriusBadgeFilterGroupTemplate", 30, InitializeGroupRow, nil, nil, DestroyGroupRow)
     ZO_ScrollList_AddDataType(listControl, BADGE_ENTRY, "AetheriusBadgeFilterBadgeTemplate", 24, InitializeBadgeRow, nil, nil, DestroyBadgeRow)
     ZO_ScrollList_AddResizeOnScreenResize(listControl)
+
+    self.emptyRow = CreateControlFromVirtual("$(parent)EmptyRow", listControl, "ZO_SortFilterListEmptyRow")
+    GetControl(self.emptyRow, "Message"):SetText("No Badges found")
 end
 
 function FilterWindow:Update(forced)
     local filter = self.filter
-    if(guildRosterScene:IsShowing() and filter:HasBadges() and self:IsEnabled()) then
+    if(self:IsShowing()) then
         filter:CollectBadges(forced)
 
         local listControl = self.listControl
@@ -219,6 +243,7 @@ function FilterWindow:Update(forced)
         ZO_ScrollList_Clear(listControl)
 
         local list = filter:GetListEntries()
+        self.emptyRow:SetHidden(#list > 0)
         for _, entry in ipairs(list) do
             scrollData[#scrollData + 1] = ZO_ScrollList_CreateDataEntry(entry.type, ZO_ShallowTableCopy(entry))
         end
@@ -226,6 +251,11 @@ function FilterWindow:Update(forced)
         ZO_ScrollList_Commit(listControl)
         RefreshFilters()
     end
+end
+
+function FilterWindow:IsShowing()
+    local filter = self.filter
+    return guildRosterScene:IsShowing() and filter:SupportsBadges() and self:IsEnabled()
 end
 
 function FilterWindow:AddToScene(scene)

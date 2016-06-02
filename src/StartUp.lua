@@ -55,6 +55,7 @@ function AetheriusBadgeFilter:RegisterGuild(name, data)
     local entries = {}
     local badges = {}
     local relations = {}
+    data = data or {}
     for _, group in ipairs(data) do
         if(group.name) then
             entries[#entries + 1] = AetheriusBadgeFilter.CreateGroupEntry(group)
@@ -75,10 +76,11 @@ end
 
 OnAddonLoaded(function()
     local defaultData = {
-        version = 1,
+        version = 2,
         enabled = true,
         locked = true,
         showScannedBadges = false,
+        showMemberCount = true,
         x = 680,
         y = 225,
         width = 300,
@@ -89,6 +91,11 @@ OnAddonLoaded(function()
     local saveData = AetheriusBadgeFilter_Data[GetDisplayName()] or ZO_DeepTableCopy(defaultData)
     AetheriusBadgeFilter_Data[GetDisplayName()] = saveData
     AetheriusBadgeFilter.defaultData = defaultData
+
+    if(saveData.version < 2) then
+        saveData.showMemberCount = defaultData.showMemberCount
+        saveData.version = 2
+    end
 
     local filter = AetheriusBadgeFilter.BadgeFilter:New(AetheriusBadgeFilter.guilds, saveData)
     local window = AetheriusBadgeFilter.FilterWindow:New(AetheriusBadgeFilterWindow, saveData, defaultData, filter)
@@ -145,7 +152,7 @@ OnAddonLoaded(function()
 
     local function Update()
         filter:SetGuild(guildRosterManager.guildId)
-        if(filter:HasBadges()) then
+        if(filter:SupportsBadges()) then
             window:AddToScene(guildRosterScene)
             window:Update()
         else
@@ -153,6 +160,23 @@ OnAddonLoaded(function()
         end
     end
 
+    local function Check(_, guildId)
+        filter:CheckGuildInfo(guildId, true)
+    end
+
     guildRosterScene:RegisterCallback("StateChange", Update)
     ZO_PreHook(guildRosterManager, "OnGuildIdChanged", Update)
+    RegisterForEvent(EVENT_GUILD_MOTD_CHANGED, Check)
+    RegisterForEvent(EVENT_GUILD_DESCRIPTION_CHANGED, Check)
+    RegisterForEvent(EVENT_GUILD_MEMBER_NOTE_CHANGED, function(_, guildId, displayName, note)
+        if(filter:IsCurrentGuild(guildId) and window:IsShowing()) then
+            local badges = filter:ParseBadges(note)
+            if(#badges > 0) then
+                filter.dirty = true
+                if(not filter:IsAnyBadgeSelected()) then
+                    window:Update()
+                end
+            end
+        end
+    end)
 end)
