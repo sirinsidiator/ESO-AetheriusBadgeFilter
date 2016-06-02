@@ -3,11 +3,11 @@
 -- Thanks a lot for all the help and for this awesome addon, sirinsidiator!
 -- Used http://www.w3schools.com/colors/colors_picker.asp and http://www.color-hex.com/ for taking the Hex Codes
 -- Last edited:
--- 05/25/2016
-AetheriusBadgeFilter:RegisterGuild("Nightingale's Utopia", {
+-- 05/28/2016
+AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_NA, "Nightingale's Utopia", {
     {
         name = "|cEEC827Info|r (Mouseover)",
-        description = "To use our |cb44be1Badges|r, mail |c6400ff@MicaelJM|r with the badges you want, or add them yourself by editing your |cb44be1Member Note|r (rightclick your name, then 'Edit Note') and adding the badge you want using the correct badge name and color.\n\nExample:\n||c778899|c778899Badge Name|r||r\nChange the |c778899Badge Name|r for the badge you want and the '778899' for the correct hex color code\nColor codes are included on the description, as 'C:|c778899 778899|r'",
+        description = "To use our |cb44be1Badges|r, mail |c6400ff@MicaelJM|r with the badges you want, or add them yourself by editing your |cb44be1Member Note|r (rightclick your name, then 'Edit Note') and adding the badge you want using the correct badge name and color\n\nExample:\n||c778899|c778899Badge Name|r||r\nChange '|c778899Badge Name|r' for the badge you want and '778899' for the correct hex color code\nColor codes are included on the description, as 'C:|c778899 778899|r'",
         badges = {
         },
     },
@@ -165,7 +165,7 @@ AetheriusBadgeFilter:RegisterGuild("Nightingale's Utopia", {
         },
     },
     {
-        name = "|c990033Master Crafters",
+        name = "|c990033Master Crafters|r",
         description = "Crafters who know all there is to know about their profession\n\n     C:|c990000 990000|r",
         badges = {
             {
@@ -178,13 +178,13 @@ AetheriusBadgeFilter:RegisterGuild("Nightingale's Utopia", {
                 name = "Equipments Master",
                 description = "Can craft all equipments of any level and knows all traits",
                 color = "990000",
-                relations = {"Crafter"},
+                relations = {"Crafter","Master Woodworker","Master Clothier","Master Blacksmith"},
             },
             {
                 name = "Consumables Master",
                 description = "Can craft all consumables of any level and knows all recipes",
                 color = "990000",
-                relations = {"Crafter"},
+                relations = {"Crafter","Master Alchemist","Master Enchanter","Master Provisioner"},
             },
             {
                 name = "Master Woodworker",
@@ -225,7 +225,7 @@ AetheriusBadgeFilter:RegisterGuild("Nightingale's Utopia", {
         },
     },
     {
-        name = "|cb44be1Campaign",
+        name = "|cb44be1Campaign|r",
         description = "Active Alliance War Campaign\n\n     C:|cffffff ffffff|r",
         badges = {
             {

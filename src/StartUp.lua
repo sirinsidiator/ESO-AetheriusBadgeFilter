@@ -50,8 +50,14 @@ local function OnAddonLoaded(callback)
     end)
 end
 
+AetheriusBadgeFilter.SERVER_PTS = "PTS"
+AetheriusBadgeFilter.SERVER_NA = "NA Megaserver"
+AetheriusBadgeFilter.SERVER_EU = "EU Megaserver"
+
 AetheriusBadgeFilter.guilds = {}
-function AetheriusBadgeFilter:RegisterGuild(name, data)
+local currentServer = GetWorldName()
+function AetheriusBadgeFilter:RegisterGuild(server, name, data)
+    if(server ~= currentServer and currentServer ~= AetheriusBadgeFilter.SERVER_PTS) then return end
     local entries = {}
     local badges = {}
     local relations = {}

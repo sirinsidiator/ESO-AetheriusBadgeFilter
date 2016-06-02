@@ -1,4 +1,4 @@
-AetheriusBadgeFilter:RegisterGuild("Aetherius Eight", {
+AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Eight", {
     {
         name = "Kraftovie",
         badges = {
