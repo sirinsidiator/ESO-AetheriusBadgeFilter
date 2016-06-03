@@ -46,7 +46,6 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Ei
             {
                 name = "RL PvE",
                 description = "Raid Leader PvE.",
-                relations = {"Activist"},
             },
             {
                 name = "RL PvP",
@@ -66,8 +65,12 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Ei
         name = "Raidovie",
         badges = {
             {
-                name = "Raider",
-                description = "Igrok s opitom trialov i PvE raidov",
+                name = "Knight of Akatosh",
+                description = "Opitnie PvP igroki",
+            },
+            {
+                name = "Knight of Stendarr",
+                description = "Opitnie PvE igroki",
             },
             {
                 name = "Raid @Fecius",
