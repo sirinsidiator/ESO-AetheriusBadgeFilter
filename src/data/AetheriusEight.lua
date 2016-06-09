@@ -53,11 +53,11 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Ei
             },
             {
                 name = "Aetherius Trade",
-                description = "Oficeri torgovogo otdeleniya Aetherius Trade",
+                description = "Oficeri torgovoy gildii Aetherius Trade",
             },
             {
                 name = "Aetherius Raid",
-                description = "Igroki progress-PvE otdeleniya Aetherius Raid",
+                description = "Oficeri progress-PvE gildii Aetherius Raid",
             },
         }
     },
@@ -152,8 +152,16 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Ei
                 description = "U4astie v gildeyskih eventah",
             },
             {
-                name = "Best Screenshot",
-                description = "Pobeda v konkurse skrinov",
+                name = "Event Winner",
+                description = "Pobeda v evente, konkurse, meropriyatii",
+            },
+            {
+                name = "Big Event Winner",
+                description = "Pobeda v bolwom evente, konkurse, meropriyatii",
+            },
+            {
+                name = "Lecturer",
+                description = "Provedenie seminara v ka4estve lektora",
             },
         },
     },
