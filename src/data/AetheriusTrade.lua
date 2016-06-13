@@ -71,7 +71,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Tr
         badges = {
             {
                 name = "Favorite of Zenithar",
-                description = "Has been blessed by Zenithar in reward for earnest work and honest profit.\nHas earned the 'Platinum Trader' badge 3 times.",
+                description = "Has been blessed by Zenithar in reward for earnest work and honest profit.\nHas earned 'Blessed by Gold' one or more times.",
             },
             {
                 name = "Master Trader",
