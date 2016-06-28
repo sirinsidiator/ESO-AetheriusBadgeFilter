@@ -21,4 +21,5 @@ BadgeFilter.lua
 Controls.xml
 data/AetheriusTrade.lua
 data/AetheriusEight.lua
+data/ImperialTradingCompany.lua
 data/NightingalesUtopia.lua
