@@ -36,7 +36,7 @@ function BadgeFilter:CheckGuildInfo(guildId, force)
     local guildName = GetGuildName(guildId)
     if(not self.checkedGuilds[guildName] or force) then
         self.checkedGuilds[guildName] = true
-        if(GetGuildDescription(guildId):find(BADGE_FILTER_NAME_PATTERN) or GetGuildMotD(guildId):find(BADGE_FILTER_NAME_PATTERN)) then
+        if(not self.guilds[guildName] and (GetGuildDescription(guildId):find(BADGE_FILTER_NAME_PATTERN) or GetGuildMotD(guildId):find(BADGE_FILTER_NAME_PATTERN))) then
             AetheriusBadgeFilter:RegisterGuild(GetWorldName(), guildName)
             return self.guilds[guildName]
         end
