@@ -41,14 +41,6 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Tr
                 description = "Has been in the guild for more than one year.",
             },
             {
-                name = "Dirty RP",
-                description = "Has participated in any RP event.",
-            },
-            {
-                name = "Gladiator",
-                description = "Has participated in any PvP event.",
-            },
-            {
                 name = "Gold Member",
                 description = "Has been in the guild since its foundation.",
             },
@@ -67,19 +59,40 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Tr
         }
     },
     {
+        name = "Event Badges",
+        badges = {
+            {
+                name = "Connoisseur",
+                description = "Has participated in any \"Sight of the Elders\" event.\nCan be awarded multiple times.",
+            },
+            {
+                name = "Dirty RP",
+                description = "Has participated in any RP event.\nCan be awarded multiple times.",
+            },
+            {
+                name = "Gladiator",
+                description = "Has participated in any PvP event.\nCan be awarded multiple times.",
+            },
+            {
+                name = "Seeker",
+                description = "Has participated in any \"Riddler's Path\" event.\nCan be awarded multiple times.",
+            },
+        }
+    },
+    {
         name = "Trade Badges",
         badges = {
             {
                 name = "Favorite of Zenithar",
-                description = "Has been blessed by Zenithar in reward for earnest work and honest profit.\nHas earned 'Blessed by Gold' one or more times.",
+                description = "Has been blessed by Zenithar in reward for earnest work and honest profit.\nHas earned 'Blessed by Gold' rank.\nCan be awarded multiple times.",
             },
             {
                 name = "Master Trader",
-                description = "Has earned the guild rank 'Master Trader'.\nCan be awarded multiple times.\nGets combined into 'Platinum Trader' badge.",
+                description = "Has earned the guild rank 'Master Trader'.\nCan be awarded multiple times.",
             },
             {
                 name = "Platinum Trader",
-                description = "Has earned the 'Master Trader' badge 10 times.\nCan be awarded multiple times.\nGets combined into 'Favorite of Zenithar' badge.",
+                description = "Has earned the 'Master Trader' badge 10 times.\nCan be awarded multiple times.",
             },
         },
     },
