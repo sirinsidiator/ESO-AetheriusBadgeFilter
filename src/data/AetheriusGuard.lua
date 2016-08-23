@@ -1,4 +1,4 @@
-AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Eight", {
+AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Guard", {
     {
         name = "Крафтовые",
         badges = {
