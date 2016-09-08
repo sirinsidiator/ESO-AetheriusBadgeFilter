@@ -4,7 +4,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading
         badges = {
             {
                 name = "Uralter",
-                description = "Gehoert zu den Gruendungsmitgliedern.",
+                description = "Gehört zu den Gründungsmitgliedern.",
             },
             {
                 name = "Althase",
@@ -16,7 +16,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading
             },
             {
                 name = "Grossherziger Spender",
-                description = "Hat bereits ueber 100k gespendet.",
+                description = "Hat bereits über 100k gespendet.",
             },
         }
     },
@@ -24,12 +24,12 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading
         name = "Handel",
         badges = {
             {
-                name = "Meisterhaendler",
-                description = "War Topverkaeufer in einer Handelswoche. Diese Auszeichnung kann mehrfach vergeben werden.",
+                name = "Meisterhändler",
+                description = "War Topverkäufer in einer Handelswoche. Diese Auszeichnung kann mehrfach vergeben werden.",
             },
             {
                 name = "Ruhm und Ehre",
-                description = "Ruhm und Ehre fuer die, die 10 Meisterhaendler-Auszeichnungen erhalten haben.",
+                description = "Ruhm und Ehre für die, die 10 Meisterhändler-Auszeichnungen erhalten haben.",
             },
         }
     },
@@ -41,7 +41,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading
                 description = "Hat an Gildenevents teilgenommen. Diese Auszeichnung kann mehrfach vergeben werden.",
             },
             {
-                name = "Glueckskind",
+                name = "Glückskind",
                 description = "Hat in einer Lotterie gewonnen.",
             },
             {
@@ -49,7 +49,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading
                 description = "Hat in einem Angelevent gewonnen.",
             },
             {
-                name = "Unermuedlicher Sucher",
+                name = "Unermüdlicher Sucher",
                 description = "Hat im Versteckspiel gewonnen.",
             },
         }
@@ -68,7 +68,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading
             },
             {
                 name = "Meisterkoch",
-                description = "Kann mehr als 90% aller Rezepte und kocht dir die verzueglichsten Lebensmittel.",
+                description = "Kann mehr als 90% aller Rezepte und kocht dir die verzüglichsten Lebensmittel.",
             },
             {
                 name = "Schmied",
@@ -97,27 +97,27 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading
         badges = {
             {
                 name = "AD PVE Gott",
-                description = "Ist Ansprechpartner fuer eine PVE-Gilde im Aldmeri Dominion",
+                description = "Ist Ansprechpartner für eine PVE-Gilde im Aldmeri Dominion",
             },
             {
                 name = "AD PVP Gott",
-                description = "Ist Ansprechpartner fuer eine PVP-Gilde im Aldmeri Dominion",
+                description = "Ist Ansprechpartner für eine PVP-Gilde im Aldmeri Dominion",
             },
             {
                 name = "DC PVE Gott",
-                description = "Ist Ansprechpartner fuer eine PVE-Gilde im Dolchsturzbündnis",
+                description = "Ist Ansprechpartner für eine PVE-Gilde im Dolchsturzbündnis",
             },
             {
                 name = "DC PVP Gott",
-                description = "Ist Ansprechpartner fuer eine PVP-Gilde im Dolchsturzbündnis",
+                description = "Ist Ansprechpartner für eine PVP-Gilde im Dolchsturzbündnis",
             },
             {
                 name = "EP PVE Gott",
-                description = "Ist Ansprechpartner fuer eine PVE-Gilde im Ebenherzpakt",
+                description = "Ist Ansprechpartner für eine PVE-Gilde im Ebenherzpakt",
             },
             {
                 name = "EP PVP Gott",
-                description = "Ist Ansprechpartner fuer eine PVP-Gilde im Ebenherzpakt",
+                description = "Ist Ansprechpartner für eine PVP-Gilde im Ebenherzpakt",
             },
         }
     }
