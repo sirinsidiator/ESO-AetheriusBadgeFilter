@@ -22,5 +22,6 @@ Controls.xml
 data/AetheriusEight.lua
 data/AetheriusGuard.lua
 data/AetheriusTrade.lua
+data/BaitTradingHouse.lua
 data/ImperialTradingCompany.lua
 data/NightingalesUtopia.lua
