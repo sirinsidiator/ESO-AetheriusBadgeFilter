@@ -1,4 +1,4 @@
-AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading House", {
+﻿AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading House", {
     {
         name = "Soziales",
         badges = {
@@ -15,7 +15,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading
                 description = "Ist seit mindestens 100 Tagen in der Gilde",
             },
             {
-                name = "Grossherziger Spender",
+                name = "Großherziger Spender",
                 description = "Hat bereits über 100k gespendet.",
             },
         }
