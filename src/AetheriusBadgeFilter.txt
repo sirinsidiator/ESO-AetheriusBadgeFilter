@@ -1,6 +1,6 @@
 ﻿## Title: AetheriusBadgeFilter
 ## Author: sirinsidiator
-## Version: 1.6.2
+## Version: 1.6.3
 ## APIVersion: 100016 100017
 ## OptionalDependsOn: LibStub LibCustomMenu LibCustomTitles
 ## SavedVariables: AetheriusBadgeFilter_Data
