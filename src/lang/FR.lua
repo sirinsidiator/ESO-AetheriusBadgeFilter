@@ -1,4 +1,4 @@
-﻿--- Main Menu Items ---
+--- Main Menu Items ---
 ZO_CreateStringId("ABF_MENU_REFRESH_BADGES", "Refresh Badges")
 ZO_CreateStringId("ABF_MENU_SCANNED_BADGES", "Show Scanned Badges")
 ZO_CreateStringId("ABF_MENU_DEFINED_BADGES", "Show Defined Badges")

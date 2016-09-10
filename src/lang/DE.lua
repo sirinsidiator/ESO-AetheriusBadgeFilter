@@ -1,4 +1,4 @@
-﻿--- Main Menu Items ---
+--- Main Menu Items ---
 ZO_CreateStringId("ABF_MENU_REFRESH_BADGES", "Abzeichen aktualisieren")
 ZO_CreateStringId("ABF_MENU_SCANNED_BADGES", "Gefundene Abzeichen anzeigen")
 ZO_CreateStringId("ABF_MENU_DEFINED_BADGES", "Definierte Abzeichen anzeigen")

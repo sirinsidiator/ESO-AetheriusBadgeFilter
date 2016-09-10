@@ -1,4 +1,4 @@
-﻿AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading House", {
+AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading House", {
     {
         name = "Soziales",
         badges = {
