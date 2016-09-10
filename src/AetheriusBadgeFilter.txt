@@ -16,6 +16,8 @@ lib/LibCustomMenu/LibCustomMenu.lua
 lib/LibCustomTitles/LibCustomTitles.lua
 
 StartUp.lua
+i18n/en.lua
+i18n/$(language).lua
 FilterWindow.lua
 BadgeFilter.lua
 Controls.xml
@@ -26,4 +28,3 @@ data/ArsNecandi.lua
 data/BaitTradingHouse.lua
 data/ImperialTradingCompany.lua
 data/NightingalesUtopia.lua
-lang\$(language).lua

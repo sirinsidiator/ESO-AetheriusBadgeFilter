@@ -1,3 +1,4 @@
+local L = AetheriusBadgeFilter.Localization
 local BUTTON_NORMAL_TEXTURE = "EsoUI/Art/TreeIcons/store_indexicon_trophy_up.dds"
 local BUTTON_PRESSED_TEXTURE = "EsoUI/Art/TreeIcons/store_indexicon_trophy_down.dds"
 local r, g, b = ZO_TOOLTIP_DEFAULT_COLOR:UnpackRGB()
@@ -44,6 +45,7 @@ function FilterWindow:Initialize(window, saveData, defaultData, filter)
     self.filter = filter
 
     local control = window:GetNamedChild("Filter")
+    control:GetNamedChild("Label"):SetText(L["WINDOW_TITLE"])
     self.listControl = control:GetNamedChild("List")
     self.fragment = ZO_SimpleSceneFragment:New(window)
     self.control = control
@@ -66,40 +68,40 @@ function FilterWindow:InitializeButtons(saveData)
     optionsButton:SetHandler("OnClicked", function(control)
         ClearMenu()
 
-        AddCustomMenuItem(GetString(ABF_MENU_REFRESH_BADGES), function() self:Update(true) end)
+        AddCustomMenuItem(L["MENU_REFRESH_BADGES"], function() self:Update(true) end)
 
         if(saveData.showScannedBadges) then
-            AddCustomMenuItem(GetString(ABF_MENU_DEFINED_BADGES), function()
+            AddCustomMenuItem(L["MENU_DEFINED_BADGES"], function()
                 saveData.showScannedBadges = false
                 self:Update()
             end)
         else
-            AddCustomMenuItem(GetString(ABF_MENU_SCANNED_BADGES), function()
+            AddCustomMenuItem(L["MENU_SCANNED_BADGES"], function()
                 saveData.showScannedBadges = true
                 self:Update()
             end)
         end
 
         if(saveData.showMemberCount) then
-            AddCustomMenuItem(GetString(ABF_MENU_HIDE_MEMBERCOUNT), function()
+            AddCustomMenuItem(L["MENU_HIDE_MEMBERCOUNT"], function()
                 saveData.showMemberCount = false
                 self:Update()
             end)
         else
-            AddCustomMenuItem(GetString(ABF_MENU_SHOW_MEMBERCOUNT), function()
+            AddCustomMenuItem(L["MENU_SHOW_MEMBERCOUNT"], function()
                 saveData.showMemberCount = true
                 self:Update()
             end)
         end
 
         if(self:IsLocked()) then
-            AddCustomMenuItem(GetString(ABF_MENU_UNLOCK_WINDOW), function() self:Unlock() end)
+            AddCustomMenuItem(L["MENU_UNLOCK_WINDOW"], function() self:Unlock() end)
         else
-            AddCustomMenuItem(GetString(ABF_MENU_LOCK_WINDOW), function() self:Lock() end)
-            AddCustomMenuItem(GetString(ABF_MENU_RESET_WINDOW), function() self:ResetPosition() end)
+            AddCustomMenuItem(L["MENU_LOCK_WINDOW"], function() self:Lock() end)
+            AddCustomMenuItem(L["MENU_RESET_WINDOW"], function() self:ResetPosition() end)
         end
 
-        AddCustomMenuItem(GetString(ABF_MENU_HIDE_WINDOW), function()
+        AddCustomMenuItem(L["MENU_HIDE_WINDOW"], function()
             self:Disable()
         end)
 
@@ -119,7 +121,7 @@ function FilterWindow:InitializeButtons(saveData)
         InitializeTooltip(InformationTooltip)
         InformationTooltip:ClearAnchors()
         InformationTooltip:SetOwner(control, BOTTOM, 0, 0)
-        InformationTooltip:AddLine(GetString(ABF_TOOLTIP_MAIN_ICON), "", r, g, b)
+        InformationTooltip:AddLine(L["TOOLTIP_MAIN_ICON"], "", r, g, b)
     end)
     toggleWindowButton:SetHandler("OnMouseExit", function(control)
         ClearTooltip(InformationTooltip)
@@ -230,7 +232,7 @@ function FilterWindow:InitializeScrollList(listControl, filter)
     ZO_ScrollList_AddResizeOnScreenResize(listControl)
 
     self.emptyRow = CreateControlFromVirtual("$(parent)EmptyRow", listControl, "ZO_SortFilterListEmptyRow")
-    GetControl(self.emptyRow, "Message"):SetText("No Badges found")
+    GetControl(self.emptyRow, "Message"):SetText(L["WINDOW_NO_BADGES"])
 end
 
 function FilterWindow:Update(forced)

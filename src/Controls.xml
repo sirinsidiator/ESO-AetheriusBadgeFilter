@@ -50,7 +50,7 @@
                 <Control name="$(parent)Filter" mouseEnabled="true" clampedToScreen="true">
                     <DimensionConstraints minX="250" minY="200" />
                     <Controls>
-                        <Label name="$(parent)Label" font="ZoFontWinH3" wrapMode="ELLIPSIS" text="Badge Filter">
+                        <Label name="$(parent)Label" font="ZoFontWinH3" wrapMode="ELLIPSIS">
                             <Anchor point="TOPLEFT" offsetX="25" offsetY="10" />
                         </Label>
 
