@@ -1,6 +1,6 @@
 ﻿## Title: AetheriusBadgeFilter
 ## Author: sirinsidiator
-## Version: 1.6.3
+## Version: 1.7.0
 ## APIVersion: 100016 100017
 ## OptionalDependsOn: LibStub LibCustomMenu LibCustomTitles
 ## SavedVariables: AetheriusBadgeFilter_Data
@@ -26,3 +26,4 @@ data/ArsNecandi.lua
 data/BaitTradingHouse.lua
 data/ImperialTradingCompany.lua
 data/NightingalesUtopia.lua
+lang\$(language).lua

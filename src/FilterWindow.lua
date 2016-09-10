@@ -66,40 +66,40 @@ function FilterWindow:InitializeButtons(saveData)
     optionsButton:SetHandler("OnClicked", function(control)
         ClearMenu()
 
-        AddCustomMenuItem("Refresh Badges", function() self:Update(true) end)
+        AddCustomMenuItem(GetString(ABF_MENU_REFRESH_BADGES), function() self:Update(true) end)
 
         if(saveData.showScannedBadges) then
-            AddCustomMenuItem("Show Defined Badges", function()
+            AddCustomMenuItem(GetString(ABF_MENU_DEFINED_BADGES), function()
                 saveData.showScannedBadges = false
                 self:Update()
             end)
         else
-            AddCustomMenuItem("Show Scanned Badges", function()
+            AddCustomMenuItem(GetString(ABF_MENU_SCANNED_BADGES), function()
                 saveData.showScannedBadges = true
                 self:Update()
             end)
         end
 
         if(saveData.showMemberCount) then
-            AddCustomMenuItem("Hide Member Count", function()
+            AddCustomMenuItem(GetString(ABF_MENU_HIDE_MEMBERCOUNT), function()
                 saveData.showMemberCount = false
                 self:Update()
             end)
         else
-            AddCustomMenuItem("Show Member Count", function()
+            AddCustomMenuItem(GetString(ABF_MENU_SHOW_MEMBERCOUNT), function()
                 saveData.showMemberCount = true
                 self:Update()
             end)
         end
 
         if(self:IsLocked()) then
-            AddCustomMenuItem("Unlock Window", function() self:Unlock() end)
+            AddCustomMenuItem(GetString(ABF_MENU_UNLOCK_WINDOW), function() self:Unlock() end)
         else
-            AddCustomMenuItem("Lock Window", function() self:Lock() end)
-            AddCustomMenuItem("Reset Window", function() self:ResetPosition() end)
+            AddCustomMenuItem(GetString(ABF_MENU_LOCK_WINDOW), function() self:Lock() end)
+            AddCustomMenuItem(GetString(ABF_MENU_RESET_WINDOW), function() self:ResetPosition() end)
         end
 
-        AddCustomMenuItem("Hide Window", function()
+        AddCustomMenuItem(GetString(ABF_MENU_HIDE_WINDOW), function()
             self:Disable()
         end)
 
@@ -119,7 +119,7 @@ function FilterWindow:InitializeButtons(saveData)
         InitializeTooltip(InformationTooltip)
         InformationTooltip:ClearAnchors()
         InformationTooltip:SetOwner(control, BOTTOM, 0, 0)
-        InformationTooltip:AddLine("Toggle Aetherius Badge Filter Window", "", r, g, b)
+        InformationTooltip:AddLine(GetString(ABF_TOOLTIP_MAIN_ICON), "", r, g, b)
     end)
     toggleWindowButton:SetHandler("OnMouseExit", function(control)
         ClearTooltip(InformationTooltip)
