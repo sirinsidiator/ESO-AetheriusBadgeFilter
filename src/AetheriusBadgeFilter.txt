@@ -30,3 +30,4 @@ data/ImperialTradingCompany.lua
 data/JustTraders.lua
 data/NightingalesUtopia.lua
 data/TamrielStockExchange.lua
+data/ZenitharsTradingHouse.lua
