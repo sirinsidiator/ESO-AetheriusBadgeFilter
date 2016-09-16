@@ -42,11 +42,11 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Ei
         badges = {
             {
                 name = "Knight of Akatosh",
-                description = "Опытный PvE игрок",
+                description = "Опытный PvP игрок",
             },
             {
                 name = "Knight of Stendarr",
-                description = "Опытный PvP игрок",
+                description = "Опытный PvE игрок",
             },
         },
     },
