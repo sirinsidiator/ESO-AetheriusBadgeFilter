@@ -15,8 +15,16 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading
                 description = "Ist seit mindestens 100 Tagen in der Gilde",
             },
             {
+                name = "Pate",
+                description = "Hat bereits über 500k gespendet.",
+            },
+            {
                 name = "Großherziger Spender",
                 description = "Hat bereits über 100k gespendet.",
+            },
+            {
+                name = "Meisterangler",
+                description = "Hat die Errungenschaft \"Meisterangler\" abgeschlossen.",
             },
         }
     },
