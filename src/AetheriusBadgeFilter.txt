@@ -1,7 +1,7 @@
 ## Title: AetheriusBadgeFilter
 ## Author: sirinsidiator
 ## Version: VERSION_NUMBER
-## APIVersion: 100016 100017
+## APIVersion: 100017
 ## OptionalDependsOn: LibStub LibCustomMenu LibCustomTitles
 ## SavedVariables: AetheriusBadgeFilter_Data
 ##
@@ -24,6 +24,7 @@ Controls.xml
 data/AetheriusEight.lua
 data/AetheriusGuard.lua
 data/AetheriusTrade.lua
+data/ALDMERI.lua
 data/ArsNecandi.lua
 data/BaitTradingHouse.lua
 data/ImperialTradingCompany.lua
