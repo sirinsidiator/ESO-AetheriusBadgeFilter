@@ -148,34 +148,14 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Imperial Tra
         description = "Badges for Vampires and Werewolves that will bite you for free. To get one for yourself, contact an officer",
         badges = {
             {
-                name = "Werewolf AD",
-                description = "Can give you a free Werewolf bite in the Aldmeri Dominion",
-                color = "CD943C",
+                name = "Werewolf",
+                description = "Can give you a free Werewolf bite",
+                color = "D87F31",
             },
             {
-                name = "Werewolf EP",
-                description = "Can give you a free Werewolf bite in the Ebonheart Pact",
-                color = "DA6D3F",
-            },
-            {
-                name = "Werewolf DC",
-                description = "Can give you a free Werewolf bite in the Daggerfall Covenant",
-                color = "937F76",
-            },
-            {
-                name = "Vampire AD",
-                description = "Can give you a free Vampire bite in the Aldmeri Dominion",
-                color = "CD6D6B",
-            },
-            {
-                name = "Vampire EP",
-                description = "Can give you a free Vampire bite in the Ebonheart Pact",
-                color = "DA456D",
-            },
-            {
-                name = "Vampire DC",
-                description = "Can give you a free Vampire bite in the Daggerfall Covenant",
-                color = "9358A4",
+                name = "Vampire",
+                description = "Can give you a free Vampire bite",
+                color = "D8318D",
             },
         }
     },
