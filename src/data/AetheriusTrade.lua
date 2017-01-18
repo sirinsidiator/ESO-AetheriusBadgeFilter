@@ -16,16 +16,16 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Tr
                 description = "Has learned more than 90% of all recipes, can cook the most delicious food and brew the most refreshing drinks.",
             },
             {
+                name = "Ultimate Chef",
+                description = "Has learned all Ambrosia recipes and can brew it.",
+            },
+            {
                 name = "Master Crafter",
                 description = "Has researched all 9 traits for every single item type.",
             },
             {
                 name = "Master Enchanter",
                 description = "Has knowledge of all rune types and can craft the best glyphs.",
-            },
-            {
-                name = "Master Stylist",
-                description = "Has discovered all the different crafting styles in the game.",
             },
         }
     },
@@ -34,7 +34,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Tr
         badges = {
             {
                 name = "Activist",
-                description = "Has participated in a guild event, poll or similar.\nCan be awarded multiple times.",
+                description = "Has participated in a guild event, poll or similar. Can be awarded multiple times.",
             },
             {
                 name = "Ancient One",
@@ -49,11 +49,15 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Tr
                 description = "Has donated more than 100k gold to the guild bank.",
             },
             {
+                name = "Golden Mark",
+                description = "Has donated more than 500k gold to the guild bank.",
+            },
+            {
                 name = "Veteran",
                 description = "Has been in the guild for more than 30 weeks.",
             },
             {
-                name = "VIP",
+                name = "Guild's Pride",
                 description = "Has aided the guild or community in a special way. Has a different set of rules applied. You can only get this badge from officers.",
             },
         }
@@ -63,19 +67,15 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Tr
         badges = {
             {
                 name = "Connoisseur",
-                description = "Has participated in any \"Sight of the Elders\" event.\nCan be awarded multiple times.",
+                description = "Has participated in any social event. Can be awarded multiple times.",
             },
             {
                 name = "Dirty RP",
-                description = "Has participated in any RP event.\nCan be awarded multiple times.",
+                description = "Has participated in any RP event. Can be awarded multiple times.",
             },
             {
                 name = "Gladiator",
-                description = "Has participated in any PvP event.\nCan be awarded multiple times.",
-            },
-            {
-                name = "Seeker",
-                description = "Has participated in any \"Riddler's Path\" event.\nCan be awarded multiple times.",
+                description = "Has participated in any PvP event. Can be awarded multiple times.",
             },
         }
     },
@@ -92,7 +92,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Tr
             },
             {
                 name = "Platinum Trader",
-                description = "Has earned the 'Master Trader' badge 10 times.\nCan be awarded multiple times.",
+                description = "Has earned the 'Master Trader' badge 10 times. Can be awarded multiple times.",
             },
         },
     },
@@ -106,10 +106,6 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Tr
             {
                 name = "Novice",
                 description = "New in guild.",
-            },
-            {
-                name = "Way Out",
-                description = "Has ignored the guild rules and all notifications. Will be kicked if we need space for new members.",
             },
         },
     },
