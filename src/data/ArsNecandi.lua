@@ -5,23 +5,38 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Ars Necandi"
         badges = {
             {
                 name = "Tank",
-                description = "Übernimmt die Rolle des Beschützers in der Gruppe",
+                description = "Übernimmt die Rolle des Beschützers in der Gruppe.",
                 color = "4592FF",
             },
             {
                 name = "Heiler",
-                description = "Übernimmt die Rolle des Heilers in der Gruppe",
+                description = "Übernimmt die Rolle des Heilers in der Gruppe.",
                 color = "47FFC1",
             },
             {
                 name = "DD",
-                description = "Übernimmt die Rolle des Schadensausteilers in der Gruppe",
+                description = "Übernimmt die Rolle des Schadensausteilers in der Gruppe.",
                 color = "FF8174",
             },
             {
-                name = "Stammgruppe",
-                description = "Ist Mitglied der PvE-Stammgruppe",
+                name = "Stammgruppe Chaos",
+                description = "Ist Mitglied der PvE-Stammgruppe Chaos Raidzeit Sonntags 20:30",
                 color = "FF8174",
+            },
+			{
+                name = "Stammgruppe 2",
+                description = "Ist Mitglied der PvE-Stammgruppe 2 Raidzeit Samstags 20:00",
+                color = "FF8174",
+            },
+			{
+                name = "Best Rookie",
+                description = "Hat sich im Turnier in der 1. Runde als Neuling bewiesen.",
+                color = "3FC6C6",
+            },
+			{
+                name = "Best Wrestler",
+                description = "Hat es geschafft im Turnier einen Gegner nur mit seinen Fäusten zu besiegen.",
+                color = "3FC6C6",
             },
         }
     },
