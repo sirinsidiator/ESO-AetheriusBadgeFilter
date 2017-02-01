@@ -31,7 +31,10 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Tamriel Stoc
     {
         name = "Trading",
         badges = {
-
+            {
+                name = "Aspirant",
+                description = "Reached 500k sales/week. Can be awarded multiple times.",
+            },
             {
                 name = "Glorious",
                 description = "Reached 1kk sales/week. Can be awarded multiple times.",
