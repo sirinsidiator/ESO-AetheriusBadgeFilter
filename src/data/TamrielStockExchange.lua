@@ -58,6 +58,10 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Tamriel Stoc
                 relations = {"Alchemist", "Provisioner", "Woodworker", "Tailor", "Blacksmith", "Enchanter"},
             },
             {
+                name = "Set-Provider",
+                description = "Has following Crafting-Stations in his house accessible for everyone in this guild.",
+            },
+            {
                 name = "Alchemist",
                 description = "Knows all ingredients and reached lvl 50 in Alchemy",
             },
