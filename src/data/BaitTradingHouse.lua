@@ -15,6 +15,10 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading
                 description = "Ist seit mindestens 100 Tagen in der Gilde",
             },
             {
+                name = "Süßkringel",
+                description = "Hat bereits über 1M gespendet.",
+            },
+            {
                 name = "Pate",
                 description = "Hat bereits über 500k gespendet.",
             },
@@ -38,6 +42,14 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading
             {
                 name = "Ruhm und Ehre",
                 description = "Ruhm und Ehre für die, die 10 Meisterhändler-Auszeichnungen erhalten haben.",
+            },
+            {
+                name = "Silberzunge",
+                description = "Hat in einer Handelswoche 500k oder mehr erreicht. Diese Auszeichnung kann mehrfach vergeben werden.",
+            },
+            {
+                name = "Pfennigfuchser",
+                description = "Hat in einer Handelswoche 250k oder mehr erreicht. Diese Auszeichnung kann mehrfach vergeben werden.",
             },
         }
     },
@@ -69,6 +81,10 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading
                 name = "Handwerksmeister",
                 description = "Beherrscht alle Handwerke",
                 relations = {"Alchemist", "Meisterkoch", "Schreiner", "Schneider", "Schmied", "Verzauberer"},
+            },
+			{
+                name = "Set-Provider",
+                description = "Hat in seinem für euch zugänglichen Hauptwohnsitz entsprechende Craftsets für euch aufgestellt.",
             },
             {
                 name = "Alchemist",
@@ -104,28 +120,12 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading
         name = "PVE und PVP Kontakte",
         badges = {
             {
-                name = "AD PVE Gott",
-                description = "Ist Ansprechpartner für eine PVE-Gilde im Aldmeri Dominion",
+                name = "Ansprechpartner PVE-Gilde",
+                description = "Ist Ansprechpartner für eine PVE-Gilde",
             },
             {
-                name = "AD PVP Gott",
-                description = "Ist Ansprechpartner für eine PVP-Gilde im Aldmeri Dominion",
-            },
-            {
-                name = "DC PVE Gott",
-                description = "Ist Ansprechpartner für eine PVE-Gilde im Dolchsturzbündnis",
-            },
-            {
-                name = "DC PVP Gott",
-                description = "Ist Ansprechpartner für eine PVP-Gilde im Dolchsturzbündnis",
-            },
-            {
-                name = "EP PVE Gott",
-                description = "Ist Ansprechpartner für eine PVE-Gilde im Ebenherzpakt",
-            },
-            {
-                name = "EP PVP Gott",
-                description = "Ist Ansprechpartner für eine PVP-Gilde im Ebenherzpakt",
+                name = "Ansprechpartner PVP-Gilde",
+                description = "Ist Ansprechpartner für eine PVP-Gilde",
             },
         }
     }
