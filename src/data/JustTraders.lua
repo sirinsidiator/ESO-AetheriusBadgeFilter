@@ -11,6 +11,10 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Just Traders
                 description = "Is since min. 100 days member of the guild.",
             }, 
             {
+                name = "Set-Provider",
+                description = "Has following Crafting-Stations in his house accessible for everyone in this guild.",
+            },
+            {
                 name = "Donator",
                 description = "Donated over 100k.",
             },
@@ -31,21 +35,18 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Just Traders
     {
         name = "Trading",
         badges = {
-		
-		   {
+            {
                 name = "Aspirant",
                 description = "Reached 500k sales/week. Can be awarded multiple times.",
             },
-
             {
                 name = "Glorious",
                 description = "Reached 1kk sales/week. Can be awarded multiple times.",
             },
-			{
+            {
                 name = "Premium Trader",
                 description = "Reached 1kk sales/week 10 times.",
             },
-		            
             {
                 name = "Master Trader",
                 description = "Has been Top-Trader in one trading week. Can be awarded multiple times.",
@@ -56,5 +57,4 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Just Traders
             },
         }
     },
-   
 })
