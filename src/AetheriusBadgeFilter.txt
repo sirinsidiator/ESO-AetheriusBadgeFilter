@@ -28,6 +28,7 @@ data/ALDMERI.lua
 data/ArsNecandi.lua
 data/BaitTradingHouse.lua
 data/Hanedan.lua
+data/HungerForce.lua
 data/ImperialTradingCompany.lua
 data/JustTraders.lua
 data/NightingalesUtopia.lua
