@@ -34,18 +34,23 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Tamriel Stoc
             {
                 name = "Aspirant",
                 description = "Reached 500k sales/week. Can be awarded multiple times.",
+                limit = false,
             },
             {
                 name = "Glorious",
                 description = "Reached 1kk sales/week. Can be awarded multiple times.",
-            },            
+                limit = false,
+            },
             {
                 name = "Master Trader",
                 description = "Has been Top-Trader in one trading week. Can be awarded multiple times.",
+                limit = 10,
+                turnsInto = "Trading Monster"
             },
             {
                 name = "Trading Monster",
                 description = "Has been 10 times Top-Trader. Can be awarded multiple times.",
+                limit = false,
             },
         }
     },

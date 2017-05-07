@@ -12,26 +12,35 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Imperial Tra
                 name = "Vendor",
                 description = "Has sold wares for more than 200k gold during a week. Can be awarded multiple times",
                 color = "80A36B",
+                limit = 10,
+                turnsInto = "Shopkeeper"
             },
             {
                 name = "Shopkeeper",
                 description = "Has received 10 Vendor badges. Can be awarded multiple times",
                 color = "46A085",
+                limit = 10,
+                turnsInto = "Tycoon"
             },
             {
                 name = "Entrepreneur",
                 description = "Has been one of the top 5 sellers in the past. Can be awarded multiple times",
                 color = "74739E",
+                limit = 10,
+                turnsInto = "Executive"
             },
             {
                 name = "Executive",
                 description = "Has received 10 Entrepreneur badges. Can be awarded multiple times",
                 color = "996380",
+                limit = 10,
+                turnsInto = "Tycoon"
             },
             {
                 name = "Tycoon",
                 description = "Has either received 10 Shopkeeper badges or 10 Executive badges. Can be awarded multiple times",
                 color = "B55A05",
+                limit = false,
             },
         }
     },
@@ -48,16 +57,19 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Imperial Tra
                 name = "Benefactor",
                 description = "Has donated more than 5k gold in a week. Can be awarded multiple times",
                 color = "D87C2F",
+                limit = false,
             },
             {
                 name = "Philanthropist",
                 description = "Has helped members of the guild with knowledge, action or coin. Can be awarded multiple times",
                 color = "64BCB3",
+                limit = false,
             },
             {
                 name = "Participant",
                 description = "Has joined in a guild activity organized by the management. Can be awarded multiple times",
                 color = "6DD374",
+                limit = false,
             },
             {
                 name = "Associate",

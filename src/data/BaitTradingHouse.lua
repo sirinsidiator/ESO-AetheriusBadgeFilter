@@ -38,18 +38,23 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading
             {
                 name = "Meisterhändler",
                 description = "War Topverkäufer in einer Handelswoche. Diese Auszeichnung kann mehrfach vergeben werden.",
+                limit = 10,
+                turnsInto = "Ruhm und Ehre"
             },
             {
                 name = "Ruhm und Ehre",
                 description = "Ruhm und Ehre für die, die 10 Meisterhändler-Auszeichnungen erhalten haben.",
+                limit = false,
             },
             {
                 name = "Silberzunge",
                 description = "Hat in einer Handelswoche 500k oder mehr erreicht. Diese Auszeichnung kann mehrfach vergeben werden.",
+                limit = false,
             },
             {
                 name = "Pfennigfuchser",
                 description = "Hat in einer Handelswoche 250k oder mehr erreicht. Diese Auszeichnung kann mehrfach vergeben werden.",
+                limit = false,
             },
         }
     },
@@ -59,6 +64,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Bait Trading
             {
                 name = "Aktiver",
                 description = "Hat an Gildenevents teilgenommen. Diese Auszeichnung kann mehrfach vergeben werden.",
+                limit = false,
             },
             {
                 name = "Glückskind",
