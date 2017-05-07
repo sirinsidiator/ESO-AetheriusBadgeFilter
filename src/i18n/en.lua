@@ -14,6 +14,12 @@ AetheriusBadgeFilter.Localization = {
     MENU_RESET_WINDOW = "Reset Window",
     MENU_HIDE_WINDOW = "Hide Window",
 
+    --- Member Badge Editor Menu ---
+    MEMBER_EDITOR_INCREMENT = "Increment",
+    MEMBER_EDITOR_DECREMENT = "Decrement",
+    MEMBER_EDITOR_UPDATE_COLOR = "Update Color",
+    MEMBER_EDITOR_REMOVE = "Remove",
+
     --- Tooltips ---
     TOOLTIP_MAIN_ICON = "Toggle Aetherius Badge Filter Window",
 }

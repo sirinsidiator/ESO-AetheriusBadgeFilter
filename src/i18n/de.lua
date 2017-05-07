@@ -14,6 +14,12 @@ local localization = {
     MENU_RESET_WINDOW = "Fenster zurücksetzen",
     MENU_HIDE_WINDOW = "Fenster verstecken",
 
+    --- Member Badge Editor Menu ---
+    MEMBER_EDITOR_INCREMENT = "Erhöhen",
+    MEMBER_EDITOR_DECREMENT = "Verniedrigen",
+    MEMBER_EDITOR_UPDATE_COLOR = "Farbe aktualisieren",
+    MEMBER_EDITOR_REMOVE = "Entfernen",
+
     --- Tooltips ---
     TOOLTIP_MAIN_ICON = "Aetherius Badge Filter Fenster umschalten",
 }

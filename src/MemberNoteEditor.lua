@@ -1,3 +1,5 @@
+local L = AetheriusBadgeFilter.Localization
+
 local MemberNoteEditor = ZO_Object:Subclass()
 AetheriusBadgeFilter.MemberNoteEditor = MemberNoteEditor
 
@@ -77,19 +79,19 @@ function MemberNoteEditor:Initialize(guilds, saveData, filter, guildRosterScene,
         local index = tonumber(linkData)
         local badgeData = self.badges[index]
         if(badgeData.info and (not badgeData.info.limit or badgeData.info.limit > 1)) then
-            AddCustomMenuItem("Increment", function()
+            AddCustomMenuItem(L["MEMBER_EDITOR_INCREMENT"], function()
                 self:IncrementBadgeCount(badgeData)
             end)
-            AddCustomMenuItem("Decrement", function()
+            AddCustomMenuItem(L["MEMBER_EDITOR_DECREMENT"], function()
                 self:DecrementBadgeCount(badgeData)
             end)
         end
         if(badgeData.info and badgeData.info.color and badgeData.info.color ~= badgeData.color) then
-            AddCustomMenuItem("Update Color", function()
+            AddCustomMenuItem(L["MEMBER_EDITOR_UPDATE_COLOR"], function()
                 self:FixBadgeColor(badgeData)
             end)
         end
-        AddCustomMenuItem("Remove", function()
+        AddCustomMenuItem(L["MEMBER_EDITOR_REMOVE"], function()
             self:RemoveBadge(badgeData)
         end)
         ShowMenu(control)
