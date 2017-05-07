@@ -20,6 +20,7 @@ i18n/en.lua
 i18n/$(language).lua
 FilterWindow.lua
 BadgeFilter.lua
+MemberNoteEditor.lua
 Controls.xml
 data/AetheriusEight.lua
 data/AetheriusGuard.lua

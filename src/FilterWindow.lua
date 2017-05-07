@@ -45,7 +45,8 @@ function FilterWindow:Initialize(window, saveData, defaultData, filter)
     self.filter = filter
 
     local control = window:GetNamedChild("Filter")
-    control:GetNamedChild("Label"):SetText(L["WINDOW_TITLE"])
+    self.labelControl = control:GetNamedChild("Label")
+    self.labelControl:SetText(L["WINDOW_TITLE"])
     self.listControl = control:GetNamedChild("List")
     self.fragment = ZO_SimpleSceneFragment:New(window)
     self.control = control
@@ -205,17 +206,23 @@ function FilterWindow:InitializeScrollList(listControl, filter)
 
         rowControl:SetHandler("OnMouseUp", function(control, button, isInside, ctrl, alt, shift, command)
             if(isInside and button == MOUSE_BUTTON_INDEX_LEFT) then
-                local selected = filter:GetBadge(entry.name)
-                if(not shift) then
-                    if(filter:GetFilteredCount() > 1) then
-                        selected = false
+                if(self.memberEditor) then
+                    if(not self.memberEditor:HasBadge(entry.name)) then
+                        self.memberEditor:AwardBadge(entry.name, nil, entry.color)
                     end
-                    filter:ClearAll()
+                else
+                    local selected = filter:GetBadge(entry.name)
+                    if(not shift) then
+                        if(filter:GetFilteredCount() > 1) then
+                            selected = false
+                        end
+                        filter:ClearAll()
+                    end
+                    filter:SetBadge(entry.name, not selected)
+                    RefreshFilters()
+                    ZO_ScrollList_RefreshVisible(listControl)
                 end
-                filter:SetBadge(entry.name, not selected)
                 PlaySound("Click")
-                RefreshFilters()
-                ZO_ScrollList_RefreshVisible(listControl)
             end
         end)
     end
@@ -327,4 +334,21 @@ function FilterWindow:Disable()
     self.toggleWindowButton:SetNormalTexture(BUTTON_NORMAL_TEXTURE)
     self.toggleWindowButton:SetPressedTexture(BUTTON_PRESSED_TEXTURE)
     RefreshFilters()
+end
+
+function FilterWindow:GetBadgeList()
+    return self.listControl
+end
+
+function FilterWindow:ResetBadgeList()
+    local list = self.listControl
+    list:SetParent(self.control)
+    list:ClearAnchors()
+    list:SetAnchor(TOPLEFT, self.labelControl, BOTTOMLEFT, 0, 5)
+    list:SetAnchor(BOTTOMRIGHT, self.control, BOTTOMRIGHT, -25, -10)
+    self:HandleResize()
+end
+
+function FilterWindow:SetMemberEditor(memberEditor)
+    self.memberEditor = memberEditor
 end

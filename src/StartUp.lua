@@ -68,6 +68,7 @@ function AetheriusBadgeFilter:RegisterGuild(server, name, data)
         end
         for _, badge in ipairs(group.badges) do
             badge = AetheriusBadgeFilter.CreateBadgeEntry(badge)
+            if(badge.limit == nil) then badge.limit = 1 end
             entries[#entries + 1] = badge
             badges[badge.name] = badge
             relations[badge.name] = badge.relations or {}
@@ -103,12 +104,13 @@ OnAddonLoaded(function()
         saveData.version = 2
     end
 
-    local filter = AetheriusBadgeFilter.BadgeFilter:New(AetheriusBadgeFilter.guilds, saveData)
-    local window = AetheriusBadgeFilter.FilterWindow:New(AetheriusBadgeFilterWindow, saveData, defaultData, filter)
-
     local guildRoster = GUILD_ROSTER_KEYBOARD
     local guildRosterManager = GUILD_ROSTER_MANAGER
     local guildRosterScene = SCENE_MANAGER:GetScene("guildRoster")
+
+    local filter = AetheriusBadgeFilter.BadgeFilter:New(AetheriusBadgeFilter.guilds, saveData)
+    local window = AetheriusBadgeFilter.FilterWindow:New(AetheriusBadgeFilterWindow, saveData, defaultData, filter)
+    local memberNoteEditor = AetheriusBadgeFilter.MemberNoteEditor:New(AetheriusBadgeFilter.guilds, saveData, filter, guildRosterScene, window)
 
     local currentSearchTerm, hasActiveFilteredBadges
     local originalGetSearchTerm = guildRoster.searchBox.GetText
