@@ -68,14 +68,17 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Tr
             {
                 name = "Connoisseur",
                 description = "Has participated in any social event. Can be awarded multiple times.",
+                limit = false,
             },
             {
                 name = "Dirty RP",
                 description = "Has participated in any RP event. Can be awarded multiple times.",
+                limit = false,
             },
             {
                 name = "Gladiator",
                 description = "Has participated in any PvP event. Can be awarded multiple times.",
+                limit = false,
             },
         }
     },
@@ -85,10 +88,13 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Tr
             {
                 name = "Favorite of Zenithar",
                 description = "Has been blessed by Zenithar in reward for earnest work and honest profit.\nHas earned 'Blessed by Gold' rank.\nCan be awarded multiple times.",
+                limit = false,
             },
             {
                 name = "Master Trader",
                 description = "Has earned the guild rank 'Master Trader'.\nCan be awarded multiple times.",
+                limit = 10,
+                turnsInto = "Platinum Trader"
             },
             {
                 name = "Platinum Trader",

@@ -47,6 +47,10 @@ function BadgeFilter:SupportsBadges()
     return self.currentGuild ~= nil
 end
 
+function BadgeFilter:GetCurrentGuildInfo()
+    return self.currentGuild
+end
+
 local function SortByNameAsc(a, b)
     return a.name < b.name
 end
