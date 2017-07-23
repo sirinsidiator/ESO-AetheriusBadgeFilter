@@ -332,6 +332,7 @@ local function SubMenuItemFactory(pool)
 
 	local label = wm:CreateControl("$(parent)Name", control, CT_LABEL)
 	label:SetAnchor(TOPLEFT)
+	control.nameLabel = control:GetNamedChild("Name")
 
 	control:SetHandler("OnMouseEnter", MouseEnter)
 	control:SetHandler("OnMouseExit", MouseExit)
@@ -374,6 +375,7 @@ local function MenuItemFactory(pool)
 
 	local label = wm:CreateControl("$(parent)Name", control, CT_LABEL)
 	label:SetAnchor(TOPLEFT)
+	control.nameLabel = control:GetNamedChild("Name")
 
 	control:SetHandler("OnMouseEnter", MouseEnter)
 	control:SetHandler("OnMouseExit", MouseExit)
