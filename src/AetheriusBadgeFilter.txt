@@ -28,6 +28,7 @@ data/AetheriusTrade.lua
 data/ALDMERI.lua
 data/ArsNecandi.lua
 data/BaitTradingHouse.lua
+data/BoethiahsReapers.lua
 data/Hanedan.lua
 data/HausWinterfell.lua
 data/HungerForce.lua
