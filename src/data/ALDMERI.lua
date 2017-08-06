@@ -5,7 +5,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "ALDMERI", {
             {
                 name = "Great Crafter",
                 description = "Владеет всеми знаниями о свойствах предметов. Изучено 90% книг стилей. Полностью овладел Алхимией, Кулинарией, Зачарованием.",
-                relations = {"Style Master", "Master Crafter", "Alchemist", "Enchanter", "Great Chef"},
+                relations = {"Style", "Master Crafter", "Alchemist", "Enchanter", "Chef"},
             },
             {
                 name = "Crafter",
@@ -16,7 +16,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "ALDMERI", {
                 description = "Владеет всеми знаниями о свойствах предметов. Изучено все 9 трейтов.",
             },
             {
-                name = "Style Master",
+                name = "Style",
                 description = "Изучено больше 90%  книг стилей.",
             },
             {
@@ -28,12 +28,20 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "ALDMERI", {
                 description = "Руны. Глифы. Кута. Знает все о том, как правильно зачаровать доспехи и оружие.",
             },
             {
-                name = "Great Chef",
+                name = "Chef",
                 description = "Любите сладкие рулеты или Бренди? Знает все об изысканной кухне.",
             },
             {
-                name = "Psijic Ambrosia",
+                name = "Ambrosia",
                 description = "Знает древний рецепт, дающий +50% к опыту.",
+            },
+            {
+                name = "Myth Ambrosia",
+                description = "Знает самый редкий рецепт древнего и редкого зелья, дающий 150% к опыту.",
+            },
+            {
+                name = "Furniture",
+                description = "Умеет создавать большое количество различных предметов мебели! Изучено множество рецептов. Обращаемся!",
             },
         }
     },
@@ -68,14 +76,31 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "ALDMERI", {
         },
     },
     {
+        name = "Роль в ПвЕ",
+        badges = {
+            {
+                name = "Tank",
+                description = "Игрок имеет готового и проверненного Танка.",
+            },
+            {
+                name = "Heal",
+                description = "Игрок имеет Хила с СПК и другим необходимым сетом.",
+            },
+            {
+                name = "DD",
+                description = "Игрок с проверенным ДПСом на манекене от 29к.",
+            },
+        },
+    },
+    {
         name = "Хранители Знаний",
         badges = {
             {
-                name = "Master of War",
+                name = "Master War",
                 description = "Знает о Войне в Сиродииле все! Как победить, какие доспехи одеть! Хотите побеждать, обращайтесь.",
             },
             {
-                name = "Master of Dungeon",
+                name = "Master Dungeon",
                 description = "Знает о Подземельях Тамриэле все! Как победить, какие способности использовать. Хотите проходить, обращайтесь.",
             },
             {
@@ -104,28 +129,12 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "ALDMERI", {
                 description = "Почетный игрок. Ценность нашей Гильдии.",
             },
             {
-                name = "Сitizen",
-                description = "Для него жизнь в Тамриэле не только война и битвы, но и  веселье, друзья, общение. ",
-            },
-            {
-                name = "Activist",
-                description = "Принимает активное участие в конкурсах и соревнованиях Гильдии.",
-            },
-            {
-                name = "Winner",
-                description = "Становился победителем в конкурсах или соревнованиях Гильдии хотя бы раз.",
-            },
-            {
-                name = "GoldTrader",
+                name = "Trader",
                 description = "Участники Гильдии, продающие свои товары в гильдейском магазине на сотни тысяч в неделю.",
             },
             {
                 name = "BestTrader",
                 description = "Участник Гильдии, продавший свой товар в гильдейском магазине больше всех.Он такой один!",
-            },
-            {
-                name = "BloodFighters",
-                description = "Участники Гильдии, готовые жертвовать своими нервами и временем для покорения особо сложных подземелий Тамриэля.",
             },
             {
                 name = "Lost in Real",
@@ -157,16 +166,8 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "ALDMERI", {
                 description = "Победил всех боссов во всех Ветеранских Испытаниях с Хард Модом! Бойтесь Его!",
             },
             {
-                name = "Flawless Conqueror",
-                description = "Безупречно прошел Ветеранскую Maelstrom Arena.",
-            },
-            {
                 name = "Master Fisher",
                 description = "Выловил всю редкую рыбу в Тамриэле. И не только в Тамриэле!",
-            },
-            {
-                name = "ScampKiller",
-                description = "Убил более 200 редких Скампов в Канализации Имперского Города.",
             },
             {
                 name = "Grand Thief",
