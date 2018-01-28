@@ -63,28 +63,13 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Tr
         }
     },
     {
-        name = "Event Badges",
-        badges = {
-            {
-                name = "Connoisseur",
-                description = "Has participated in any social event. Can be awarded multiple times.",
-                limit = false,
-            },
-            {
-                name = "Dirty RP",
-                description = "Has participated in any RP event. Can be awarded multiple times.",
-                limit = false,
-            },
-            {
-                name = "Gladiator",
-                description = "Has participated in any PvP event. Can be awarded multiple times.",
-                limit = false,
-            },
-        }
-    },
-    {
         name = "Trade Badges",
         badges = {
+            {
+                name = "Perfect Merchant",
+                description = "52 trading weeks or more at February 2018 start. * for twice.",
+                limit = false,
+            },
             {
                 name = "Favorite of Zenithar",
                 description = "Has been blessed by Zenithar in reward for earnest work and honest profit.\nHas earned 'Blessed by Gold' rank.\nCan be awarded multiple times.",
