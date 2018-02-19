@@ -1,7 +1,7 @@
 ## Title: AetheriusBadgeFilter
 ## Author: sirinsidiator & Arkadius
 ## Version: VERSION_NUMBER
-## APIVersion: 100021
+## APIVersion: 100022
 ## OptionalDependsOn: LibStub LibCustomMenu LibCustomTitles
 ## SavedVariables: AetheriusBadgeFilter_Data
 ##
