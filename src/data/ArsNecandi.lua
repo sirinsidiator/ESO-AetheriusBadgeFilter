@@ -18,25 +18,36 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Ars Necandi"
                 description = "Übernimmt die Rolle des Schadensausteilers in der Gruppe.",
                 color = "FF8174",
             },
+        }
+    },
+    {
+        name = "PvE-Stammgruppen",
+        description = "Hier findet ihr die einzelnen PvE-Stammgruppen und ihre Raidzeiten. Bei Interesse bitte die Gildenleitung kontaktieren.",
+        badges = {
             {
                 name = "Stammgruppe Chaos",
-                description = "Ist Mitglied der PvE-Stammgruppe Chaos Raidzeit Sonntags 20:30",
+                description = "Ist Mitglied der PvE-Stammgruppe Chaos Raidzeit Sonntags 19:30",
                 color = "FF8174",
             },
-			{
+            {
                 name = "Stammgruppe 2",
                 description = "Ist Mitglied der PvE-Stammgruppe 2 Raidzeit Samstags 20:00",
                 color = "FF8174",
             },
-			{
-                name = "Best Rookie",
-                description = "Hat sich im Turnier in der 1. Runde als Neuling bewiesen.",
-                color = "3FC6C6",
+            {
+                name = "Stammgruppe Guerilla",
+                description = "Ist Mitglied der PvE-Stammgruppe Guerilla Raidzeit Sonntags 20:00",
+                color = "FF8174",
             },
-			{
-                name = "Best Wrestler",
-                description = "Hat es geschafft im Turnier einen Gegner nur mit seinen Fäusten zu besiegen.",
-                color = "3FC6C6",
+            {
+                name = "Stammgruppe 4",
+                description = "Ist Mitglied der PvE-Stammgruppe 4 Raidzeit Mittwochs 20:00",
+                color = "FF8174",
+            },
+            {
+                name = "Stammgruppe 5",
+                description = "Ist Mitglied der PvE-Stammgruppe 4 Raidzeit Sonntags 20:00",
+                color = "FF8174",
             },
         }
     },
@@ -85,4 +96,20 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Ars Necandi"
             },
         }
     },
+    {
+        name = "Sonstiges",
+        description = "Filter die nicht zu den oberen passen.",
+        badges = {
+            {
+                name = "Vampir",
+                description = "Kann einen Vampirbiss anbieten.",
+                color = "E60A24",
+            },
+            {
+                name = "Werwolf",
+                description = "Kann einen Werwolfbiss anbieten.",
+                color = "E60A24",
+            },
+        }
+    }
 })
