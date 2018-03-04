@@ -10,12 +10,17 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Constellatio
                 name = "AWL",
                 color = "0296f2",
             },
+        }
+    },
+    {
+        name = "Loyalty",
+        badges = {
             {
-                name = "Vet",
+                name = "Veteran",
                 color = "02ce2a",
             },
             {
-                name = "Loyal",
+                name = "Honored",
                 color = "02ce2a",
             },
         }
@@ -25,33 +30,16 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Constellatio
         badges = {
             {
                 name = "Patron",
-                color = "FFF300",
+                color = "ffd100",
             },
             {
                 name = "Golden",
-                color = "ff910a",
+                color = "ffd100",
                 limit = false,
             },
         }
     },
-    {
-        name = "Crafts",
-        badges = {
-            {
-                name = "Angler",
-                color = "f46cc2",
-            },
-            {
-                name = "Attuned",
-                color = "8594ff",
-            },
-            {
-                name = "Crafter",
-                color = "a83bfc",
-            },
-        }
-    },
-    {
+	    {
         name = "Bites",
         badges = {
             {
@@ -61,6 +49,40 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Constellatio
             {
                 name = "Werewolf",
                 color = "df2c2a",
+            },
+        }
+    },
+    {
+        name = "Roles",
+        badges = {
+            {
+                name = "Tank",
+                color = "a83bfc",
+            },
+            {
+                name = "Healer",
+                color = "a83bfc",
+            },
+            {
+                name = "Damage Dealer",
+                color = "a83bfc",
+            },
+        }
+    },
+    {
+        name = "Crafts",
+        badges = {
+            {
+                name = "Angler",
+                color = "8594ff",
+            },
+            {
+                name = "Attuned",
+                color = "8594ff",
+            },
+            {
+                name = "Crafter",
+                color = "8594ff",
             },
         }
     },
