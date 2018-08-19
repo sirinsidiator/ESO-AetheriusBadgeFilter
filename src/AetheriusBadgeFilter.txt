@@ -27,7 +27,6 @@ data/AetheriusGuard.lua
 data/AetheriusTrade.lua
 data/ALDMERI.lua
 data/ArsNecandi.lua
-data/BaitTradingHouse.lua
 data/BoethiahsReapers.lua
 data/Constellation.lua
 data/Hanedan.lua
