@@ -19,8 +19,8 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "TESAll", {
                 color = "a200ff",
             },
             {
-                name = "PvP",
-                description = "Активные участники БГ/войны альянсов",
+                name = "Ученик",
+                description = "Игроки, желающие вступить в состав учебного рейда гильдии.",
                 color = "d9534f",
             },
             {
@@ -29,9 +29,9 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "TESAll", {
                 color = "65737e",
             },
             {
-                name = "Criminal Scum",
-                description = "Нарушители порядка",
-                color = "be9b7b",
+                name = "TESALL",
+                description = "Является активным пользователем форума tesall.ru",
+                color = "485ec9",
             },
         }
     },
@@ -50,8 +50,8 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "TESAll", {
                 color = "6497b1",
             },
             {
-                name = "ДД 30+",
-                description = "DPS 30к+ на скелете",
+                name = "ДД+",
+                description = "DPS over9000 на скелете",
                 color = "6497b1",
             },
             {
@@ -69,12 +69,6 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "TESAll", {
                 name = "Лучший торговец",
                 description = "Игрок вошедший в топ-3 торговцев гильдии. Может быть получено несколько раз",
                 color = "eb8c00",
-                limit = false,
-            },
-            {
-                name = "Меценат",
-                description = "Игрок пожертвовавший наибольшую сумму на торговца/лотерею. Может быть получено несколько раз",
-                color = "dc6900",
                 limit = false,
             },
         }
@@ -100,13 +94,8 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "TESAll", {
             },
             {
                 name = "Амброзия",
-                description = "Знает рецепты, дающий +50%/+100% к опыту.",
+                description = "Знает рецепты, дающий +50%/+100%/+150% к опыту.",
                 color = "d896ff",
-            },
-            {
-                name = "МегаАмброзия",
-                description = "Знает рецепт, дающий +150% к опыту.",
-                color = "be29ec",
             },
         }
     },
