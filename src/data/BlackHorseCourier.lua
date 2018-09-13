@@ -1,8 +1,8 @@
--- Custom Badges for the "Black Horse Courier" Guild (PC/EU)
+-- Custom Badges for the "Black Horse Courier" Guild (PC/EU & NA)
 -- Made by @CradonWar for @sirinsidiator's addon "Aetherius Badge Filter" - http://www.esoui.com/downloads/info1354-AetheriusBadgeFilter.html
 -- Thanks a lot for all the help and for this awesome addon, @sirinsidiator!
--- Last edited: 19/08/2018
-AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Black Horse Courier", {
+-- Last edited: 12/09/2018
+AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_ALL, "Black Horse Courier", {
     {
         name = "|cFDFFBFInfo (Mouseover)|r",
         description = "Welcome to Aetherius Badge Filter of the Black Horse Courier!\n\n|cFDFFBFWhat are Badges?|r\nBadges are simply labels with a color format placed in the notes of a guild member. For example |cFF0000My Badge|r is a badge. Unlike ranks, badges are a lot more transient and versatile as they are not limited in their number. There are some non-ranked badges that you can simply ask to any officer to add into your notes. But you need Ranked Badges to improve your guild rank and get promoted.\n\n|cFDFFBFWhat are Ranked Badges?|r\nRanked Badges determines your improvement to get promoted in the guild. E.g. staying loyal, participating into Guild Events, selling items in Guild Store (when we have a Guild Trader), donating golds into Guild Bank, etc.",
@@ -11,7 +11,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Black Horse 
     },
     {
         name = "|cFDFFBFGuild Ranks (Mouseover)|r",
-        description = "|cFDFFBF[Legendary]|r\nEarn 200 ranked badges to reach this rank.\n\n|cFDFFBF[Master]|r\nEarn 100 ranked badges to reach this rank.\n\n|cFDFFBF[Expert]|r\nEarn 50 ranked badges to reach this rank.\n\n|cFDFFBF[Adept]|r\nEarn 25 ranked badges to reach this rank.\n\n|cFDFFBF[Apprentice]|r\nEarn 5 ranked badges to reach this rank.\n\n|cFDFFBF[Novice]|r\nWelcome to Black Horse Courier!",
+        description = "|cFDFFBF[Legendary]|r\nEarn 100 ranked badges to reach this rank.\n\n|cFDFFBF[Master]|r\nEarn 50 ranked badges to reach this rank.\n\n|cFDFFBF[Expert]|r\nEarn 25 ranked badges to reach this rank.\n\n|cFDFFBF[Adept]|r\nEarn 10 ranked badges to reach this rank.\n\n|cFDFFBF[Apprentice]|r\nEarn 5 ranked badges to reach this rank.\n\n|cFDFFBF[Novice]|r\nWelcome to Black Horse Courier!",
         badges = {
         },
     },
@@ -122,22 +122,14 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Black Horse 
         description = "Badges that are awarded to members for their economic exploits. These badges will be used as a basis for promotions in the guild. Can be awarded once a week.",
         badges = {
             {
-                name = "Vendor",
-                description = "Has sold wares for more than 100k gold during a week.",
+                name = "Tycoon",
+                description = "Has either received 10 Merchant badges or 10 Entrepreneur badges.\nCounts as 100 badges.",
                 color = "55C855",
-                limit = 10,
-                turnsInto = "Merchant"
-            },
-            {
-                name = "Merchant",
-                description = "Has received 10 Vendor badges.\nCounts as 10 badges.",
-                color = "55C855",
-                limit = 10,
-                turnsInto = "Tycoon"
+                limit = false,
             },
             {
                 name = "Top Trader",
-                description = "Has been one of the top 5 sellers who sold wares for more than 100k gold during a week.",
+                description = "Has been one of the top 5 sellers when we had a Guild Trader.",
                 color = "55C855",
                 limit = 10,
                 turnsInto = "Entrepreneur"
@@ -150,10 +142,18 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Black Horse 
                 turnsInto = "Tycoon"
             },
             {
-                name = "Tycoon",
-                description = "Has either received 10 Merchant badges or 10 Entrepreneur badges.\nCounts as 100 badges.",
+                name = "Vendor",
+                description = "Has sold wares for more than 50k gold during a week.",
                 color = "55C855",
-                limit = false,
+                limit = 10,
+                turnsInto = "Merchant"
+            },
+            {
+                name = "Merchant",
+                description = "Has received 10 Vendor badges.\nCounts as 10 badges.",
+                color = "55C855",
+                limit = 10,
+                turnsInto = "Tycoon"
             },
         }
     },
