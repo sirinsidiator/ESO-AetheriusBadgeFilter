@@ -1,7 +1,7 @@
 -- Custom Badges for the "Siyah Atlı Kurye" Guild (PC/EU)
 -- Made by @CradonWar for @sirinsidiator's addon "Aetherius Badge Filter" - http://www.esoui.com/downloads/info1354-AetheriusBadgeFilter.html
 -- Thanks a lot for all the help and for this awesome addon, @sirinsidiator!
--- Last edited: 19/08/2018
+-- Last edited: 12/09/2018
 AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Siyah Atlı Kurye", {
     {
         name = "|cFDFFBFBilgi (Önizleme)|r",
@@ -122,22 +122,14 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Siyah Atlı 
         description = "Üyelere ekonomideki başarıları için verilen rozetlerdir. Bu rozetler lonca içerisinde rütbenizin yükselmesi için esas alınır. Haftada bir kez kazanılabilir.",
         badges = {
             {
-                name = "Satıcı",
-                description = "Bir hafta içerisinde 100k altından daha yüksek satış yaptı.",
+                name = "Milyoner",
+                description = "10 Tüccar rozeti veya 10 Girişimci rozeti kazandı.\n100 adet rozet olarak sayılır.",
                 color = "55C855",
-                limit = 10,
-                turnsInto = "Tüccar"
-            },
-            {
-                name = "Tüccar",
-                description = "10 kez Satıcı rozeti kazandı.\n10 adet rozet olarak sayılır.",
-                color = "55C855",
-                limit = 10,
-                turnsInto = "Milyoner"
+                limit = false,
             },
             {
                 name = "En İyi Tüccar",
-                description = "Bir hafta içerisinde 100k altından daha yüksek satış yapıp en iyi 5 satıcı içerisinde oldu.",
+                description = "Lonca Tüccarımız varken en iyi 5 satıcı içerisinde oldu.",
                 color = "55C855",
                 limit = 10,
                 turnsInto = "Girişimci"
@@ -150,10 +142,18 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Siyah Atlı 
                 turnsInto = "Milyoner"
             },
             {
-                name = "Milyoner",
-                description = "10 Tüccar rozeti veya 10 Girişimci rozeti kazandı.\n100 adet rozet olarak sayılır.",
+                name = "Satıcı",
+                description = "Bir hafta içerisinde 50k altından daha yüksek satış yaptı.",
                 color = "55C855",
-                limit = false,
+                limit = 10,
+                turnsInto = "Tüccar"
+            },
+            {
+                name = "Tüccar",
+                description = "10 kez Satıcı rozeti kazandı.\n10 adet rozet olarak sayılır.",
+                color = "55C855",
+                limit = 10,
+                turnsInto = "Milyoner"
             },
         }
     },
