@@ -57,6 +57,10 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Tr
                 description = "Has been in the guild for more than 30 weeks.",
             },
             {
+                name = "Pillar of Zenithar",
+                description = "Has been in the guild for more than one year.",
+            },
+            {
                 name = "Guild's Pride",
                 description = "Has aided the guild or community in a special way. Has a different set of rules applied. You can only get this badge from officers.",
             },
