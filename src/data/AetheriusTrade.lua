@@ -37,8 +37,16 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Tr
                 description = "Has participated in a guild event, poll or similar. Can be awarded multiple times.",
             },
             {
+                name = "Veteran",
+                description = "Has been in the guild for more than 30 weeks.",
+            },
+            {
                 name = "Ancient One",
                 description = "Has been in the guild for more than one year.",
+            },
+            {
+                name = "Pillar of Zenithar",
+                description = "Has been in the guild for more than three years.",
             },
             {
                 name = "Gold Member",
@@ -51,14 +59,6 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Tr
             {
                 name = "Golden Mark",
                 description = "Has donated more than 500k gold to the guild bank.",
-            },
-            {
-                name = "Veteran",
-                description = "Has been in the guild for more than 30 weeks.",
-            },
-            {
-                name = "Pillar of Zenithar",
-                description = "Has been in the guild for more than one year.",
             },
             {
                 name = "Guild's Pride",
