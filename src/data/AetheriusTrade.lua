@@ -5,27 +5,10 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Tr
             {
                 name = "Craft God",
                 description = "Has mastered every crafting discipline and can craft every single item in each of them.",
-                relations = {"Master Alchemist", "Master Chef", "Master Crafter", "Master Enchanter", "Master Stylist"},
             },
             {
-                name = "Master Alchemist",
-                description = "Has mastered alchemy and can mix the most powerful potions and poisons.",
-            },
-            {
-                name = "Master Chef",
-                description = "Has learned more than 90% of all recipes, can cook the most delicious food and brew the most refreshing drinks.",
-            },
-            {
-                name = "Ultimate Chef",
-                description = "Has learned all Ambrosia recipes and can brew it.",
-            },
-            {
-                name = "Master Crafter",
-                description = "Has researched all 9 traits for every single item type.",
-            },
-            {
-                name = "Master Enchanter",
-                description = "Has knowledge of all rune types and can craft the best glyphs.",
+                name = "Artisan",
+                description = "Ready to craft items(armor, weapon, consumables etc) for gold.",
             },
         }
     },
@@ -53,16 +36,33 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Tr
                 description = "Has been in the guild since its foundation.",
             },
             {
+                name = "Guild's Pride",
+                description = "Has aided the guild or community in a special way. Has a different set of rules applied. You can only get this badge from officers.",
+            },
+        }
+    },
+    {
+        name = "Support Badges",
+        badges = {
+            {
+                name = "Founder",
+                description = "Great Maecenas. Providing awesome support for guild.",
+            },
+            {
                 name = "Gold'n'Glory",
                 description = "Has donated more than 100k gold to the guild bank.",
+            },
+            {
+                name = "Helpful Hand",
+                description = "Has donated more than 250k gold to the guild bank.",
             },
             {
                 name = "Golden Mark",
                 description = "Has donated more than 500k gold to the guild bank.",
             },
             {
-                name = "Guild's Pride",
-                description = "Has aided the guild or community in a special way. Has a different set of rules applied. You can only get this badge from officers.",
+                name = "Golden Support",
+                description = "Has donated more than 1m gold to the guild bank.",
             },
         }
     },
@@ -82,12 +82,14 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Aetherius Tr
             {
                 name = "Master Trader",
                 description = "Has earned the guild rank 'Master Trader'.\nCan be awarded multiple times.",
-                limit = 10,
-                turnsInto = "Platinum Trader"
             },
             {
                 name = "Platinum Trader",
-                description = "Has earned the 'Master Trader' badge 10 times. Can be awarded multiple times.",
+                description = "Has earned the 'Master Trader' badge 10 times.",
+            },
+            {
+                name = "Diamond Trader",
+                description = "Has earned the 'Master Trader' badge 50 times.",
             },
         },
     },
