@@ -19,9 +19,20 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "TESAll", {
                 color = "a200ff",
             },
             {
+                name = "Рейд2",
+                description = "Игроки, которые входят в состав рейда гильдии",
+                color = "a200ff",
+            },
+            {
                 name = "Ученик",
                 description = "Игроки, желающие вступить в состав учебного рейда гильдии.",
                 color = "d9534f",
+            },
+            {
+                name = "Criminal Scum",
+                description = "Граждане алкоголики, хулиганы, тунеядцы",
+                color = "657e6e",
+                limit = false,
             },
             {
                 name = "Unkickable",
