@@ -30,6 +30,7 @@ data/ArsNecandi.lua
 data/BlackHorseCourier.lua
 data/BoethiahsReapers.lua
 data/Constellation.lua
+data/EternalForestMerchantry.lua
 data/Hanedan.lua
 data/HausWinterfell.lua
 data/HungerForce.lua
