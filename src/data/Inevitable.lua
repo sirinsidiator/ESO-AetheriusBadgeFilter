@@ -67,11 +67,6 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Inevitable",
         name = "General",
         badges = {
             {
-                name = "Sets Provider",
-                description = "Has following crafting stations in his residence, available for all guild members",
-                color = "ecf100",
-            },
-            {
                 name = "PVE",
                 description = "Organises PVE events (trials, dungeons, etc)",
                 color = "14a481",
@@ -110,6 +105,11 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Inevitable",
                 name = "Status:Offline",
                 description = "Has status set to offline - recommended to put it to online a.s.a.p.",
                 color = "737274",
+            },
+            {
+                name = "TaxBack pending",
+                description = "Didnt recive his reward because of full inbox",
+                color = "ffffcc",
             },
         }
     },
