@@ -1,7 +1,7 @@
 -- Custom Badges for the "Black Horse Courier" Guild (PC/EU & NA)
 -- Made by @CradonWar for @sirinsidiator's addon "Aetherius Badge Filter" - http://www.esoui.com/downloads/info1354-AetheriusBadgeFilter.html
 -- Thanks a lot for all the help and for this awesome addon, @sirinsidiator!
--- Last edited: 12/09/2018
+-- Last edited: 31/07/2019
 AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_ALL, "Black Horse Courier", {
     {
         name = "|cFDFFBFInfo (Mouseover)|r",
@@ -16,6 +16,27 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_ALL, "Black Horse
         },
     },
     {
+        name = "|cFFD700NEW!|r |cFDFFBFArena Ranks (Mouseover)|r",
+        description = "|cFDFFBFArena Ranks|r are given to the |cC64343Fighters|r of the Dueling Tournament. Aside from |cFDFFBFGuild Ranks|r and |cFDFFBFBadges|r, the only purpose is to show your progress in the |cFDFFBFHammerdeath Arena|r.\n\n|cFDFFBF[Pit Dog]|r\nNewest member of the Arena who either applied to the |c0087BDBlue Team|r or the |cFFD300Yellow Team|r.\n\n|cFDFFBF[Brawler]|r\nDefeat 5 combatants to reach this rank.\n\n|cFDFFBF[Bloodletter]|r\nDefeat 10 combatants to reach this rank.\n\n|cFDFFBF[Myrmidon]|r\nDefeat 15 combatants to reach this rank.\n\n|cFDFFBF[Warrior]|r\nDefeat 20 combatants to reach this rank.\n\n|cFDFFBF[Gladiator]|r\nDefeat 25 combatants to reach this rank.\n\n|cFDFFBF[Hero]|r\nDefeat 50 combatants to reach this rank.\n\n|cFDFFBF[Champion]|r\nBecome a |cFDFFBFChampion|r of the |c0087BDBlue Team|r or the |cFFD300Yellow Team|r in the latest tournament.\n|cFDFFBFNOTE:|r This title may lost if another combatant becomes the next Champion.\n\n|cFDFFBF[Grand Champion]|r\nBecome the |c7851A9Grand Champion|r of the arena.\n|cFDFFBFNOTE:|r This title may lost if another Champion becomes the next Grand Champion.",
+        badges = {
+            {
+                name = "Grand Champion",
+                description = "Became the |c7851A9Grand Champion|r of the arena.\n\n|cFDFFBFNOTE:|r This title may lost if another Champion becomes the next Grand Champion.",
+                color = "7851A9",
+            },
+            {
+                name = "Champion",
+                description = "Became the Champion of the |c0087BDBlue Team|r in the latest tournament.\n\n|cFDFFBFNOTE:|r This title may lost if another combatant becomes the next Champion.",
+                color = "0087BD",
+            },
+            {
+                name = "Champion ",
+                description = "Became the Champion of the |cFFD300Yellow Team|r in the latest tournament.\n\n|cFDFFBFNOTE:|r This title may lost if another combatant becomes the next Champion.",
+                color = "FFD300",
+            },
+        },
+    },
+    {
         name = "Staff",
         description = "Authorized people who you can contact them if you have questions, suggestions, problems, etc.",
         badges = {
@@ -27,26 +48,6 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_ALL, "Black Horse
             {
                 name = "Officer",
                 description = "An active officer of the Black Horse Courier.",
-                color = "FF0000",
-            },
-            {
-                name = "Recruiter",
-                description = "An active recruiter of the Black Horse Courier.",
-                color = "FF0000",
-            },
-            {
-                name = "PVE Organizer",
-                description = "Event Organizer for Trials or group dungeons.",
-                color = "FF0000",
-            },
-            {
-                name = "PVP Organizer",
-                description = "Event Organizer for AvA, Battlegrounds or dueling.",
-                color = "FF0000",
-            },
-            {
-                name = "Community Organizer",
-                description = "Event Organizer for social guild events.",
                 color = "FF0000",
             },
         }
@@ -104,59 +105,65 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_ALL, "Black Horse
                 limit = false,
             },
             {
-                name = "Gladiator",
+                name = "Fighter",
                 description = "Join a PVP guild event and complete at least one major activity to earn this badge.",
                 color = "C64343",
                 limit = false,
             },
             {
-                name = "Champion",
-                description = "Earn a badge from each event in the week.\n\n|cFDFFBFNOTE: You can only earn this badge if there are more than one guild event in the week.|r",
+                name = "Blademaster",
+                description = "Join a Dueling Tournament and become the last man standing to earn this badge.\nCounts as 5 badges.|r",
+                color = "C64343",
+                limit = false,
+            },
+            {
+                name = "Participant",
+                description = "Participants of the #Summerfall community event by Zenimax back in October 2018.\nCounts as 5 badges.|r",
                 color = "C64343",
                 limit = false,
             },
         }
     },
-    {
-        name = "Trade Badges",
-        description = "Badges that are awarded to members for their economic exploits. These badges will be used as a basis for promotions in the guild. Can be awarded once a week.",
-        badges = {
-            {
-                name = "Tycoon",
-                description = "Has either received 10 Merchant badges or 10 Entrepreneur badges.\nCounts as 100 badges.",
-                color = "55C855",
-                limit = false,
-            },
-            {
-                name = "Top Trader",
-                description = "Has been one of the top 5 sellers when we had a Guild Trader.",
-                color = "55C855",
-                limit = 10,
-                turnsInto = "Entrepreneur"
-            },
-            {
-                name = "Entrepreneur",
-                description = "Has received 10 Top Trader badges.\nCounts as 10 badges.",
-                color = "55C855",
-                limit = 10,
-                turnsInto = "Tycoon"
-            },
-            {
-                name = "Vendor",
-                description = "Has sold wares for more than 50k gold during a week.",
-                color = "55C855",
-                limit = 10,
-                turnsInto = "Merchant"
-            },
-            {
-                name = "Merchant",
-                description = "Has received 10 Vendor badges.\nCounts as 10 badges.",
-                color = "55C855",
-                limit = 10,
-                turnsInto = "Tycoon"
-            },
-        }
-    },
+    --    {
+    --        name = "Trade Badges",
+    --        description = "Badges that are awarded to members for their economic exploits. These badges will be used as a basis for promotions in the guild. Can be awarded once a week.",
+    --        badges = {
+    --            {
+    --                name = "Top Trader",
+    --                description = "Has been one of the top 5 sellers when we had a Guild Trader.",
+    --                color = "55C855",
+    --                limit = 10,
+    --                turnsInto = "Entrepreneur"
+    --            },
+    --            {
+    --                name = "Vendor",
+    --                description = "Has sold wares for more than 50k gold during a week.",
+    --                color = "55C855",
+    --                limit = 10,
+    --                turnsInto = "Merchant"
+    --            },
+    --            {
+    --                name = "Entrepreneur",
+    --                description = "Has received 10 Top Trader badges.\nCounts as 10 badges.",
+    --                color = "55C855",
+    --                limit = 10,
+    --                turnsInto = "Tycoon"
+    --            },
+    --            {
+    --                name = "Merchant",
+    --                description = "Has received 10 Vendor badges.\nCounts as 10 badges.",
+    --                color = "55C855",
+    --                limit = 10,
+    --                turnsInto = "Tycoon"
+    --            },
+    --            {
+    --                name = "Tycoon",
+    --                description = "Has either received 10 Merchant badges or 10 Entrepreneur badges.\nCounts as 100 badges.",
+    --                color = "55C855",
+    --                limit = false,
+    --            },
+    --        }
+    --    },
     {
         name = "Donation Badges",
         description = "Badges that are awarded to members for their donations to the guild bank. These badges will be used as a basis for promotions in the guild. Can be awarded multiple times.",
@@ -212,46 +219,6 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_ALL, "Black Horse
                 color = "2DFFF8",
             },
             {
-                name = "Style Master",
-                description = "Has discovered all the different crafting styles in the game.",
-                color = "2DFFF8",
-            },
-            {
-                name = "Blacksmith",
-                description = "Creates weapons or heavy armor.",
-                color = "5EB9D7",
-            },
-            {
-                name = "Clothier",
-                description = "Creates light or medium armor.",
-                color = "5EB9D7",
-            },
-            {
-                name = "Woodworker",
-                description = "Creates staves or shields.",
-                color = "5EB9D7",
-            },
-            {
-                name = "Jeweler",
-                description = "Creates necklaces or rings.",
-                color = "5EB9D7",
-            },
-            {
-                name = "Alchemist",
-                description = "Brews potions or poisons.",
-                color = "5EB9D7",
-            },
-            {
-                name = "Enchanter",
-                description = "Enchants glyphs.",
-                color = "5EB9D7",
-            },
-            {
-                name = "Provisioner",
-                description = "Cooks food or brews drinks.",
-                color = "5EB9D7",
-            },
-            {
                 name = "Tank",
                 description = "Takes the role of a tank in a dungeon or trial.",
                 color = "FD7A1A",
@@ -296,7 +263,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_ALL, "Black Horse
     },
     {
         name = "|cFDFFBFCredits (Mouseover)|r",
-        description = "|cFDFFBFAetherius Badge Filter by|r\n@Arkadius & @sirinsidiator\n\n|cFDFFBFBadges for Black Horse Courier by|r\n@CradonWar\n\nSpecial thanks to @sirinsidiator who helped us to upload data for Black Horse Courier.\n\nThanks for using this addon and being a member of our Guild!\n\n|cFDFFBFBlack Horse Courier - 2018|r",
+        description = "|cFDFFBFAetherius Badge Filter by|r\n@Arkadius & @sirinsidiator\n\n|cFDFFBFBadges for Black Horse Courier by|r\n@CradonWar\n\nSpecial thanks to @sirinsidiator who helped us to upload data for Black Horse Courier.\n\nThanks for using this addon and being a member of our Guild!\n\n|cFDFFBFBlack Horse Courier - 2019|r",
         badges = {
         },
     },
