@@ -5,13 +5,12 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Eternal Fore
             {
                 name = "Friend",
                 description = "Friend to the Guildmaster.",
-                color = "00FFFF",
+                color = "4257E0",
             },
             {
                 name = "Founder",
                 description = "One of the first 50 Members of this Guild.",
                 color = "D7DF01",
-
             },
             {
                 name = "Elder",
@@ -19,24 +18,46 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Eternal Fore
                 color = "00BFFF",
             },
             {
+                name = "Loyalist",
+                description = "Member of multiple TTT Guilds.",
+                color = "743696",
+            },
+        }
+    },
+    {
+        name = "Donor Badges",
+        badges = {
+            {
                 name = "Supporter",
                 description = "Donated over 10k.",
                 color = "FE2EC8",
+                limit = 5,
+                turnsInto = "Arch-Supporter",
             },
             {
                 name = "Arch-Supporter",
                 description = "Donated over 50k.",
                 color = "FA58AC",
+                limit = 2,
+                turnsInto = "Patron",
             },
             {
                 name = "Patron",
                 description = "Donated over 100k.",
                 color = "5FB404",
+                limit = 5,
+                turnsInto = "Arch-Patron",
             },
             {
                 name = "Arch-Patron",
                 description = "Donated over 500k.",
                 color = "38610b",
+                limit = 999,
+            },
+            {
+                name = "Eternal",
+                description = "Lifetime Member! Can only be kicked through inactivity! (250k Donation at once )",
+                color = "268077",
             },
         }
     },
@@ -44,23 +65,30 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Eternal Fore
         name = "Trading Badges",
         badges = {
             {
-                name = "Platinum Trader",
-                description = "Reached 500k sales/week. Can be awarded multiple times.",
-                color = "FFFFFF",
-                limit = false,
+                name = "Elite Trader",
+                description = "Has been Top-Trader in one trading week. Can be awarded multiple times.",
+                color = "A9E2F3",
+                limit = 999,
             },
             {
                 name = "Diamond Trader",
-                description = "Has been Top-Trader in one trading week. Can be awarded multiple times.",
+                description = "Reached 1 Million sales in one trading week. Can be awarded multiple times.",
+                color = "FFFFFF",
                 limit = 10,
-                color = "A9E2F3",
+                turnsInto = "God of Sales",
+            },
+            {
+                name = "God of Sales",
+                description = "Has been 10 times Diamond Trader. Can be awarded multiple times.",
+                color = "F2F5A9",
+                limit = 10,
                 turnsInto = "Saint",
             },
             {
                 name = "Saint",
-                description = "Has been 10 times Top-Trader. Can be awarded multiple times.",
-                color = "F3F781",
-                limit = false,
+                description = "Has been 10 times God of Sales. Can be awarded multiple times.",
+                color = "DFDF01",
+                limit = 999,
             },
         }
     },
@@ -75,13 +103,22 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Eternal Fore
             {
                 name = "Blood-Sucker",
                 description = "Is a Vampire and is willing to bite another Person.",
-                limit = 10,
                 color = "DF0101",
             },
             {
                 name = "Craftsman",
                 description = "Can Craft any Item in the Game and is willing to Craft things for another Person for a small Fee.",
                 color = "FE2EF7",
+            },
+        }
+    },
+    {
+        name = "Info Badges",
+        badges = {
+            {
+                name = "Offlinemode",
+                description = "Plays in Offlinemode",
+                color = "FF0000",
             },
         }
     },
