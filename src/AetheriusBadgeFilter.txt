@@ -3,7 +3,6 @@
 ## Version: VERSION_NUMBER
 ## APIVersion: 100027 100028
 ## DependsOn: LibCustomMenu
-## OptionalDependsOn: LibStub LibCustomTitles
 ## SavedVariables: AetheriusBadgeFilter_Data
 ##
 ## This Add-on is not created by, affiliated with or sponsored by ZeniMax Media Inc. or its affiliates. 
@@ -11,9 +10,6 @@
 ## All rights reserved
 ##
 ## You can read the full terms at https://account.elderscrollsonline.com/add-on-terms
-
-lib/LibStub/LibStub.lua
-lib/LibCustomTitles/LibCustomTitles.lua
 
 StartUp.lua
 i18n/en.lua
