@@ -24,29 +24,22 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "The Noble Me
         badges = {
             {
                 name = "Supporter",
-                description = "Donated over 10k.",
+                description = "Donated over 50k.",
                 color = "FE2EC8",
-                limit = 5,
+                limit = 2,
                 turnsInto = "Arch-Supporter",
             },
             {
                 name = "Arch-Supporter",
-                description = "Donated over 50k.",
+                description = "Donated over 100k.",
                 color = "FA58AC",
-                limit = 2,
+                limit = 5,
                 turnsInto = "Patron",
             },
             {
                 name = "Patron",
-                description = "Donated over 100k.",
-                color = "5FB404",
-                limit = 5,
-                turnsInto = "Arch-Patron",
-            },
-            {
-                name = "Arch-Patron",
                 description = "Donated over 500k.",
-                color = "38610b",
+                color = "5FB404",
                 limit = 999,
             },
             {
@@ -71,6 +64,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "The Noble Me
                 color = "FFFFFF",
                 limit = 10,
                 turnsInto = "God of Sales",
+
             },
             {
                 name = "God of Sales",

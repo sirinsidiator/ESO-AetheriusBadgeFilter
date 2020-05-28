@@ -37,5 +37,6 @@ data/NightingalesUtopia.lua
 data/SiyahAtliKurye.lua
 data/TamrielStockExchange.lua
 data/Tesall.lua
+data/TheNobleMerchants.lua
 data/WorldAuctionHouse.lua
 data/ZenitharsTradingHouse.lua
