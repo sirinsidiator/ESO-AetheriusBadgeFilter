@@ -75,26 +75,30 @@ function MemberNoteEditor:Initialize(guilds, saveData, filter, guildRosterScene,
     previewControl:SetMouseEnabled(true)
     previewControl:SetHidden(true)
     previewControl:SetHandler("OnLinkClicked", function(control, linkData, linkText, button)
-        ClearMenu()
         local index = tonumber(linkData)
         local badgeData = self.badges[index]
-        if(badgeData.info and (not badgeData.info.limit or badgeData.info.limit > 1)) then
-            AddCustomMenuItem(L["MEMBER_EDITOR_INCREMENT"], function()
-                self:IncrementBadgeCount(badgeData)
+        if(button == MOUSE_BUTTON_INDEX_LEFT) then
+            self:IncrementBadgeCount(badgeData)
+        elseif(button == MOUSE_BUTTON_INDEX_RIGHT) then
+            ClearMenu()
+            if(badgeData.info and (not badgeData.info.limit or badgeData.info.limit > 1)) then
+                AddCustomMenuItem(L["MEMBER_EDITOR_INCREMENT"], function()
+                    self:IncrementBadgeCount(badgeData)
+                end)
+                AddCustomMenuItem(L["MEMBER_EDITOR_DECREMENT"], function()
+                    self:DecrementBadgeCount(badgeData)
+                end)
+            end
+            if(badgeData.info and badgeData.info.color and badgeData.info.color ~= badgeData.color) then
+                AddCustomMenuItem(L["MEMBER_EDITOR_UPDATE_COLOR"], function()
+                    self:FixBadgeColor(badgeData)
+                end)
+            end
+            AddCustomMenuItem(L["MEMBER_EDITOR_REMOVE"], function()
+                self:RemoveBadge(badgeData)
             end)
-            AddCustomMenuItem(L["MEMBER_EDITOR_DECREMENT"], function()
-                self:DecrementBadgeCount(badgeData)
-            end)
+            ShowMenu(control)
         end
-        if(badgeData.info and badgeData.info.color and badgeData.info.color ~= badgeData.color) then
-            AddCustomMenuItem(L["MEMBER_EDITOR_UPDATE_COLOR"], function()
-                self:FixBadgeColor(badgeData)
-            end)
-        end
-        AddCustomMenuItem(L["MEMBER_EDITOR_REMOVE"], function()
-            self:RemoveBadge(badgeData)
-        end)
-        ShowMenu(control)
     end)
     self.previewControl = previewControl
     self.badges = {}
