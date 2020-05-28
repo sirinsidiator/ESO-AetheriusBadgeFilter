@@ -36,6 +36,7 @@ data/JustTraders.lua
 data/NightingalesUtopia.lua
 data/NirnTraders.lua
 data/SiyahAtliKurye.lua
+data/SovngardeTraders.lua
 data/TamrielStockExchange.lua
 data/Tesall.lua
 data/TheNobleMerchants.lua
