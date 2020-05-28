@@ -34,6 +34,7 @@ data/ImperialTradingCompany.lua
 data/Inevitable.lua
 data/JustTraders.lua
 data/NightingalesUtopia.lua
+data/NirnTraders.lua
 data/SiyahAtliKurye.lua
 data/TamrielStockExchange.lua
 data/Tesall.lua
