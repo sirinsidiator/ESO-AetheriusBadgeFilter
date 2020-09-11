@@ -78,7 +78,11 @@ function MemberNoteEditor:Initialize(guilds, saveData, filter, guildRosterScene,
         local index = tonumber(linkData)
         local badgeData = self.badges[index]
         if(button == MOUSE_BUTTON_INDEX_LEFT) then
-            self:IncrementBadgeCount(badgeData)
+            if(IsShiftKeyDown()) then
+                self:DecrementBadgeCount(badgeData)
+            else
+                self:IncrementBadgeCount(badgeData)
+            end
         elseif(button == MOUSE_BUTTON_INDEX_RIGHT) then
             ClearMenu()
             if(badgeData.info and (not badgeData.info.limit or badgeData.info.limit > 1)) then
