@@ -1,44 +1,39 @@
 AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Imperial Trading Company", {
     {
         name = "Trading",
-        description = "Badges that are awarded to members for their economic exploits. These badges will be used as a basis for promotions to Trader and Merchant rank",
+        description = "Badges that are awarded to members for their economic exploits. These badges will be used as a basis for promotions to a higher rank",
         badges = {
             {
-                name = "Top Trader",
-                description = "Has been one of the top 5 sellers of last week. Will be removed after a week",
-                color = "A4A578",
-            },
-            {
                 name = "Vendor",
-                description = "Has sold wares for more than 200k gold during a week. Can be awarded multiple times",
+                description = "Has sold wares for more than 300k gold during a week. Can be awarded multiple times",
                 color = "80A36B",
-                limit = 10,
+                limit = 5,
                 turnsInto = "Shopkeeper"
             },
             {
                 name = "Shopkeeper",
-                description = "Has received 10 Vendor badges. Can be awarded multiple times",
+                description = "Has received 5 Vendor badges. Can be awarded multiple times",
                 color = "46A085",
-                limit = 10,
+                limit = 5,
                 turnsInto = "Tycoon"
             },
             {
                 name = "Entrepreneur",
-                description = "Has been one of the top 5 sellers in the past. Can be awarded multiple times",
+                description = "Has been one of the top 10 sellers during a week. Can be awarded multiple times",
                 color = "74739E",
-                limit = 10,
+                limit = 5,
                 turnsInto = "Executive"
             },
             {
                 name = "Executive",
-                description = "Has received 10 Entrepreneur badges. Can be awarded multiple times",
+                description = "Has received 5 Entrepreneur badges. Can be awarded multiple times",
                 color = "996380",
-                limit = 10,
+                limit = 5,
                 turnsInto = "Tycoon"
             },
             {
                 name = "Tycoon",
-                description = "Has either received 10 Shopkeeper badges or 10 Executive badges. Can be awarded multiple times",
+                description = "Has either received 5 Shopkeeper or 5 Executive badges. Can be awarded multiple times",
                 color = "B55A05",
                 limit = false,
             },
@@ -46,119 +41,47 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Imperial Tra
     },
     {
         name = "Participation",
-        description = "Badges that are awarded to members for their activities in the guild. These badges will earn you much appreciation and are exchanged for a present on each new DLC launch",
+        description = "Badges that are awarded to members for their activities in the guild. Some of these badges will be used as a basis for promotions, others will earn you much appreciation",
         badges = {
             {
-                name = "Officer",
-                description = "An active officer of the Imperial Trading Company. Contact them if you have questions, suggestions, problems, etc.",
-                color = "FF0000",
-            },
-            {
                 name = "Benefactor",
-                description = "Has donated more than 5k gold in a week. Can be awarded multiple times",
+                description = "Has donated more than 15k gold in a single week. Can be awarded multiple times",
                 color = "D87C2F",
                 limit = false,
             },
             {
-                name = "Philanthropist",
-                description = "Has helped members of the guild with knowledge, action or coin. Can be awarded multiple times",
-                color = "64BCB3",
+                name = "Investor",
+                description = "Has donated a cumulative sum of 1M gold over time. Can be awarded multiple times",
+                color = "AD8D1B",
                 limit = false,
             },
             {
                 name = "Participant",
-                description = "Has joined in a guild activity organized by the management. Can be awarded multiple times",
+                description = "Has participated in an event or helped guild members in some notable way. Members are welcome to inform officers about those acts. Can be awarded multiple times",
                 color = "6DD374",
                 limit = false,
             },
             {
                 name = "Associate",
-                description = "Has signed up on the Imperial Trading Company forums (www.imperialtradingcompany.net) and written 10 posts",
+                description = "Has joined our discord server at |c3ABAFFhttps://discord.gg/bpsDzmE|r",
                 color = "A37AD6",
             },
---            {
---                name = "Away",
---                description = "Is currently unavailable and will be back at the date specified next to the badge",
---                color = "AAAAAA",
---            },
---            {
---                name = "Do Not Kick",
---                description = "Shall always stay with the Imperial Trading Company",
---                color = "78B764",
---            },
         }
     },
     {
-        name = "Crafting",
-        description = "Badges that identify crafters that take commissions. To get one for yourself, contact an officer",
+        name = "Services",
+        description = "Badges that identify services offered by guild members, either for free or for a commissions. To get one for yourself, contact an officer",
         badges = {
             {
-                name = "Blacksmith",
-                description = "Creates weapons or heavy armor",
-                color = "375F7A",
-            },
-            {
-                name = "Clothier",
-                description = "Creates light or medium armor",
-                color = "A52B5E",
-            },
-            {
-                name = "Woodworker",
-                description = "Creates staves or shields",
-                color = "AF6438",
-            },
-            {
-                name = "Alchemist",
-                description = "Brews potions or poisons",
-                color = "349118",
-            },
-            {
-                name = "Enchanter",
-                description = "Enchants glyphs",
-                color = "A44DBC",
-            },
-            {
-                name = "Provisioner",
-                description = "Cooks food or brews drinks",
-                color = "A83E39",
-            },
-            {
-                name = "Jack of all Trades",
-                description = "Can craft items in any category",
+                name = "Artisan",
+                description = "Can craft items for coin. Message them for details",
                 color = "AD8D1B",
             },
             {
                 name = "Trait Master",
-                description = "Can provide research materials",
+                description = "Can provide research materials. Message them for details",
                 color = "3FC6C6",
             },
-        }
-    },
-    {
-        name = "Adventuring",
-        description = "Dungeon related badges. To get one for yourself, contact an officer",
-        badges = {
-            {
-                name = "Tank",
-                description = "Takes the role of a tank in dungeons",
-                color = "5589B5",
-            },
-            {
-                name = "Healer",
-                description = "Takes the role of a healer in dungeons",
-                color = "59A03B",
-            },
-            {
-                name = "Damage Dealer",
-                description = "Takes the role of a damage dealer in dungeons",
-                color = "B76856",
-            },
-        }
-    },
-    {
-        name = "Bites",
-        description = "Badges for Vampires and Werewolves that will bite you for free. To get one for yourself, contact an officer",
-        badges = {
             {
                 name = "Werewolf",
                 description = "Can give you a free Werewolf bite",
@@ -170,5 +93,28 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Imperial Tra
                 color = "D8318D",
             },
         }
+    },
+    {
+        name = "Organisational",
+        description = "Badges used to keep track of various things related to the management of the guild",
+        badges = {
+            {
+                name = "Officer",
+                description = "An active officer of the Imperial Trading Company. Contact them if you have questions, suggestions, problems, etc.",
+                color = "349118",
+            },
+            {
+                name = "Away",
+                description = "Benefactor Badges can be traded in for Away Badges. Every week that goes beyond the inactivity limit will consume one Away badge. Once they are gone, you will be kicked for inactivity. The sales requirement will also be suspended during that time",
+                color = "AAAAAA",
+                limit = false,
+            },
+            {
+                name = "Warned",
+                description = "Has not met the 5k minimum sales per month (= 4 trading weeks) and is at risk to be kicked on the beginning of the next trading week",
+                color = "FF0000",
+                limit = 3,
+            },
+        },
     },
 })
