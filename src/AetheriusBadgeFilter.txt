@@ -39,6 +39,7 @@ data/SiyahAtliKurye.lua
 data/SovngardeTraders.lua
 data/TamrielStockExchange.lua
 data/Tesall.lua
+data/TheMisadventurersLeague.lua
 data/TheNobleMerchants.lua
 data/WorldAuctionHouse.lua
 data/ZenitharsTradingHouse.lua
