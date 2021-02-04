@@ -1,11 +1,26 @@
 AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "The Noble Merchants", {
     {
-        name = "Special Badges",
+        name = "Special",
         badges = {
             {
+                name = "Partisan",
+                description = "Awarded to a very select individual who has been incredibly supportive to the guild or has helped the guild in an extraordinary way! This is the highest honor one can receive in this guild. ",
+                color = "B45F04",
+            },
+            {
+                name = "Champion",
+                description = "Has currently the highest sales in one week of any individual ever. This badge can only be given to one player at a time. Once the record is broken this badge will be given to the new record holder. ",
+                color = "b8860b",
+            },
+            {
                 name = "Friend",
-                description = "Friend to the Guildmaster.",
+                description = "Friend to the Guildmasters.",
                 color = "4257E0",
+            },
+            {
+                name = "Noble",
+                description = "Lifetime Member! Can only be kicked through inactivity!",
+                color = "B40404",
             },
             {
                 name = "Elder",
@@ -14,13 +29,14 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "The Noble Me
             },
             {
                 name = "Loyalist",
-                description = "Member of multiple TTT Guilds.",
+                description = "Member of multiple Guilds under our Leadership.",
                 color = "743696",
+                limit = 4
             },
         }
     },
     {
-        name = "Donor Badges",
+        name = "Donations",
         badges = {
             {
                 name = "Supporter",
@@ -40,49 +56,56 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "The Noble Me
                 name = "Patron",
                 description = "Donated over 500k.",
                 color = "5FB404",
-                limit = 999,
+                limit = 2,
+                turnsInto = "Arch-Patron",
             },
             {
-                name = "Noble",
-                description = "Lifetime Member! Can only be kicked through inactivity! (300k Donation at once)",
-                color = "B40404",
+                name = "Arch-Patron",
+                description = "Donated over 1M.",
+                color = "088A08",
+                limit = 999,
             },
         }
     },
     {
-        name = "Trading Badges",
+        name = "Trading",
         badges = {
             {
                 name = "Elite Trader",
-                description = "Has been Top-Trader in one trading week. Can be awarded multiple times.",
+                description = "Has been one of the 3 Top-Traders in one trading week. Can be awarded multiple times.",
                 color = "A9E2F3",
                 limit = 999,
             },
             {
                 name = "Diamond Trader",
-                description = "Reached 1 Million sales in one trading week. Can be awarded multiple times.",
-                color = "FFFFFF",
+                description = "Reached 1 Million sales in one trading week. After reaching 10 of these badges, will turn into Magnate",
+                color = "3EAED0",
                 limit = 10,
                 turnsInto = "God of Sales",
-
             },
             {
                 name = "God of Sales",
                 description = "Has been 10 times Diamond Trader. Can be awarded multiple times.",
-                color = "F2F5A9",
+                color = "4997D0",
+                limit = 999,
+            },
+            {
+                name = "Emerald Trader",
+                description = "Reached 5 Million sales in one trading week. After reaching 10 of these badges, will turn into Saint!",
+                color = "50C878",
                 limit = 10,
                 turnsInto = "Saint",
             },
             {
                 name = "Saint",
-                description = "Has been 10 times God of Sales. Can be awarded multiple times.",
-                color = "DFDF01",
+                description = "Has been 10 times Emerald Trader. Can be awarded multiple times.",
+                color = "3B7A57",
                 limit = 999,
             },
         }
     },
     {
-        name = "Supportive Badges",
+        name = "Support",
         badges = {
             {
                 name = "Pack Leader",
@@ -102,7 +125,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "The Noble Me
         }
     },
     {
-        name = "Info Badges",
+        name = "Info",
         badges = {
             {
                 name = "Offlinemode",
