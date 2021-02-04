@@ -39,7 +39,6 @@ data/NirnTraders.lua
 data/RollingCoins.lua
 data/ShiningCoins.lua
 data/SiyahAtliKurye.lua
-data/SovngardeTraders.lua
 data/TamrielsEmporium.lua
 data/TamrielStockExchange.lua
 data/Tesall.lua
