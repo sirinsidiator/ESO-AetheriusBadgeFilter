@@ -1,6 +1,10 @@
 AetheriusBadgeFilter:RegisterGuild(
     AetheriusBadgeFilter.SERVER_EU,
-    "Flipping Coins",
+    {
+        "Flipping Coins",
+        "Rolling Coins",
+        "Shining Coins",
+    },
     {
         {
             name = "Special Badges",
