@@ -79,9 +79,9 @@ AetheriusBadgeFilter:RegisterGuild(
             name = "Trading",
             badges = {
                 {
-                    name = "Elite Trader",
-                    description = "Has been one of the |cA9E2F33 Top-Traders|r in one trading week. Can be awarded multiple times.",
-                    color = "A9E2F3",
+                    name = "Top Trader",
+                    description = "Has been one of the |cF5DA81Top-Traders|r in one trading week. Can be awarded multiple times.",
+                    color = "F5DA81",
                     limit = 999
                 },
                 {
@@ -112,7 +112,7 @@ AetheriusBadgeFilter:RegisterGuild(
                 },
                 {
                     name = "Ruby Trader",
-                    description = "Reached |cF6221710 Million|r sales in one trading week. After reaching 10 of these badges, will turn into Saint! (Added August 2021)",
+                    description = "Reached |cF6221710 Million|r sales in one trading week. After reaching 10 of these badges, will turn into |c660000Mogul|r! \n\nAdded August 2021",
                     color = "F62217",
                     limit = 10,
                     turnsInto = "Mogul"
