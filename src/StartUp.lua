@@ -75,11 +75,19 @@ function AetheriusBadgeFilter:RegisterGuild(server, name, data)
             relations[badge.name] = badge.relations or {}
         end
     end
-    self.guilds[name] = {
+
+    local guildData = {
         entries = entries,
         badges = badges,
         relations = relations,
     }
+    if type(name) == "table" then
+        for i = 1, #name do
+            self.guilds[name[i]] = guildData
+        end
+    else
+        self.guilds[name] = guildData
+    end
 end
 
 OnAddonLoaded(function()
