@@ -5,7 +5,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Imperial Tra
         badges = {
             {
                 name = "Vendor",
-                description = "Has sold wares for more than 300k gold during a week. Can be awarded multiple times",
+                description = "Has sold wares for more than 1M gold during a week. Can be awarded multiple times",
                 color = "80A36B",
                 limit = 5,
                 turnsInto = "Shopkeeper"
@@ -45,7 +45,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Imperial Tra
         badges = {
             {
                 name = "Benefactor",
-                description = "Has donated more than 15k gold in a single week. Can be awarded multiple times",
+                description = "Has donated more than 50k gold in a single week. Can be awarded multiple times",
                 color = "D87C2F",
                 limit = false,
             },
@@ -111,7 +111,7 @@ AetheriusBadgeFilter:RegisterGuild(AetheriusBadgeFilter.SERVER_EU, "Imperial Tra
             },
             {
                 name = "Warned",
-                description = "Has not met the 5k minimum sales per month (= 4 trading weeks) and is at risk to be kicked on the beginning of the next trading week",
+                description = "Has not met the 15k minimum sales per month (= 4 trading weeks) and is at risk of being kicked at the beginning of the next trading week",
                 color = "FF0000",
                 limit = 3,
             },
