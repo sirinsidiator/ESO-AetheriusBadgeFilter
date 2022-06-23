@@ -23,4 +23,4 @@ local localization = {
     --- Tooltips ---
     TOOLTIP_MAIN_ICON = "Aetherius Badge Filter Fenster umschalten",
 }
-ZO_ShallowTableCopy(localization, AetheriusBadgeFilter.Localization)
+ZO_ShallowTableCopy(localization, AetheriusBadgeFilter.internal.Localization)

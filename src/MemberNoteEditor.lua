@@ -1,13 +1,9 @@
-local L = AetheriusBadgeFilter.Localization
+local ABF = AetheriusBadgeFilter
+local internal = ABF.internal
+local L = internal.Localization
 
-local MemberNoteEditor = ZO_Object:Subclass()
-AetheriusBadgeFilter.MemberNoteEditor = MemberNoteEditor
-
-function MemberNoteEditor:New(...)
-    local obj = ZO_Object.New(self)
-    obj:Initialize(...)
-    return obj
-end
+local MemberNoteEditor = ZO_InitializingObject:Subclass()
+ABF.class.MemberNoteEditor = MemberNoteEditor
 
 function MemberNoteEditor:Initialize(guilds, saveData, filter, guildRosterScene, filterWindow)
     self.guilds = guilds

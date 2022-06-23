@@ -1,4 +1,7 @@
-local L = AetheriusBadgeFilter.Localization
+local ABF = AetheriusBadgeFilter
+local internal = ABF.internal
+local L = internal.Localization
+
 local BUTTON_NORMAL_TEXTURE = "EsoUI/Art/TreeIcons/store_indexicon_trophy_up.dds"
 local BUTTON_PRESSED_TEXTURE = "EsoUI/Art/TreeIcons/store_indexicon_trophy_down.dds"
 local r, g, b = ZO_TOOLTIP_DEFAULT_COLOR:UnpackRGB()
@@ -21,22 +24,16 @@ local function CreateEntry(entry, entryType)
     return entry
 end
 
-function AetheriusBadgeFilter.CreateGroupEntry(entry)
+function internal.CreateGroupEntry(entry)
     return CreateEntry(entry, GROUP_ENTRY)
 end
 
-function AetheriusBadgeFilter.CreateBadgeEntry(entry)
+function internal.CreateBadgeEntry(entry)
     return CreateEntry(entry, BADGE_ENTRY)
 end
 
-local FilterWindow = ZO_Object:Subclass()
-AetheriusBadgeFilter.FilterWindow = FilterWindow
-
-function FilterWindow:New(...)
-    local obj = ZO_Object.New(self)
-    obj:Initialize(...)
-    return obj
-end
+local FilterWindow = ZO_InitializingObject:Subclass()
+ABF.class.FilterWindow = FilterWindow
 
 function FilterWindow:Initialize(window, saveData, defaultData, filter)
     self.window = window

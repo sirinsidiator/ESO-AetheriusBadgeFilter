@@ -1,4 +1,4 @@
-AetheriusBadgeFilter.Localization = {
+AetheriusBadgeFilter.internal.Localization = {
     --- Main Window Labels ---
     WINDOW_TITLE = "Badge Filter",
     WINDOW_NO_BADGES = "No Badges found",

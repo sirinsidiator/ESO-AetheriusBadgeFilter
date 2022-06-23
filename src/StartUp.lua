@@ -1,5 +1,11 @@
 local ADDON_NAME = "AetheriusBadgeFilter"
-AetheriusBadgeFilter = {}
+local ABF = {
+    class = {},
+    internal = {}
+}
+_G[ADDON_NAME] = ABF
+local class = ABF.class
+local internal = ABF.internal
 
 local nextEventHandleIndex = 1
 
@@ -34,24 +40,24 @@ local function OnAddonLoaded(callback)
 end
 
 local currentServer = GetWorldName()
-AetheriusBadgeFilter.SERVER_PTS = "PTS"
-AetheriusBadgeFilter.SERVER_NA = "NA Megaserver"
-AetheriusBadgeFilter.SERVER_EU = "EU Megaserver"
-AetheriusBadgeFilter.SERVER_ALL = currentServer
+ABF.SERVER_PTS = "PTS"
+ABF.SERVER_NA = "NA Megaserver"
+ABF.SERVER_EU = "EU Megaserver"
+ABF.SERVER_ALL = currentServer
 
-AetheriusBadgeFilter.guilds = {}
-function AetheriusBadgeFilter:RegisterGuild(server, name, data)
-    if(server ~= currentServer and currentServer ~= AetheriusBadgeFilter.SERVER_PTS) then return end
+internal.guilds = {}
+function ABF:RegisterGuild(server, name, data)
+    if(server ~= currentServer and currentServer ~= ABF.SERVER_PTS) then return end
     local entries = {}
     local badges = {}
     local relations = {}
     data = data or {}
     for _, group in ipairs(data) do
         if(group.name) then
-            entries[#entries + 1] = AetheriusBadgeFilter.CreateGroupEntry(group)
+            entries[#entries + 1] = internal.CreateGroupEntry(group)
         end
         for _, badge in ipairs(group.badges) do
-            badge = AetheriusBadgeFilter.CreateBadgeEntry(badge)
+            badge = internal.CreateBadgeEntry(badge)
             if(badge.limit == nil) then badge.limit = 1 end
             entries[#entries + 1] = badge
             badges[badge.name] = badge
@@ -66,10 +72,10 @@ function AetheriusBadgeFilter:RegisterGuild(server, name, data)
     }
     if type(name) == "table" then
         for i = 1, #name do
-            self.guilds[name[i]] = guildData
+            internal.guilds[name[i]] = guildData
         end
     else
-        self.guilds[name] = guildData
+        internal.guilds[name] = guildData
     end
 end
 
@@ -89,7 +95,7 @@ OnAddonLoaded(function()
     AetheriusBadgeFilter_Data = AetheriusBadgeFilter_Data or {}
     local saveData = AetheriusBadgeFilter_Data[GetDisplayName()] or ZO_DeepTableCopy(defaultData)
     AetheriusBadgeFilter_Data[GetDisplayName()] = saveData
-    AetheriusBadgeFilter.defaultData = defaultData
+    internal.defaultData = defaultData
 
     if(saveData.version < 2) then
         saveData.showMemberCount = defaultData.showMemberCount
@@ -100,9 +106,9 @@ OnAddonLoaded(function()
     local guildRosterManager = GUILD_ROSTER_MANAGER
     local guildRosterScene = SCENE_MANAGER:GetScene("guildRoster")
 
-    local filter = AetheriusBadgeFilter.BadgeFilter:New(AetheriusBadgeFilter.guilds, saveData)
-    local window = AetheriusBadgeFilter.FilterWindow:New(AetheriusBadgeFilterWindow, saveData, defaultData, filter)
-    local memberNoteEditor = AetheriusBadgeFilter.MemberNoteEditor:New(AetheriusBadgeFilter.guilds, saveData, filter, guildRosterScene, window)
+    local filter = class.BadgeFilter:New(internal.guilds, saveData)
+    local window = class.FilterWindow:New(AetheriusBadgeFilterWindow, saveData, defaultData, filter)
+    local memberNoteEditor = class.MemberNoteEditor:New(internal.guilds, saveData, filter, guildRosterScene, window)
 
     local currentSearchTerm, hasActiveFilteredBadges
     local originalGetSearchTerm = guildRoster.searchBox.GetText
