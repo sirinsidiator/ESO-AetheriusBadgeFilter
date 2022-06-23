@@ -24,27 +24,10 @@ local function WrapFunction(object, functionName, wrapper)
     object[functionName] = function(...) return wrapper(originalFunction, ...) end
 end
 
-local messages = {}
-local function LogDebug(message, ...)
-    if CHAT_SYSTEM.primaryContainer then
-        df("[%s] " .. message, ADDON_NAME, ...)
-    else
-        messages[#messages + 1] = {message, ...}
-    end
-end
-
-local function FlushMessages()
-    for i = 1, #messages do
-        LogDebug(messages[i])
-    end
-    messages = {}
-end
-
 local function OnAddonLoaded(callback)
     local eventHandle = ""
     eventHandle = RegisterForEvent(EVENT_ADD_ON_LOADED, function(event, name)
         if(name ~= ADDON_NAME) then return end
-        FlushMessages()
         callback()
         UnregisterForEvent(event, name)
     end)
