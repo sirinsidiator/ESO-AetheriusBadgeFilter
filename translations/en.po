@@ -1,8 +1,9 @@
 # sirinsidiator <sir@insidi.at>, 2022.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: AetheriusBadgeFilter\n"
+"Report-Msgid-Bugs-To: https://weblate.sir.insidi.at/or/projects/"
+"aetheriusbadgefilter/messages/\n"
 "POT-Creation-Date: 2022-06-23 23:09+0000\n"
 "PO-Revision-Date: 2022-06-23 23:09+0000\n"
 "Last-Translator: sirinsidiator <sir@insidi.at>\n"
