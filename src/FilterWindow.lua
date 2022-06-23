@@ -1,6 +1,6 @@
 local ABF = AetheriusBadgeFilter
 local internal = ABF.internal
-local L = internal.Localization
+local gettext = internal.gettext
 
 local BUTTON_NORMAL_TEXTURE = "EsoUI/Art/TreeIcons/store_indexicon_trophy_up.dds"
 local BUTTON_PRESSED_TEXTURE = "EsoUI/Art/TreeIcons/store_indexicon_trophy_down.dds"
@@ -43,7 +43,8 @@ function FilterWindow:Initialize(window, saveData, defaultData, filter)
 
     local control = window:GetNamedChild("Filter")
     self.labelControl = control:GetNamedChild("Label")
-    self.labelControl:SetText(L["WINDOW_TITLE"])
+    -- TRANSLATORS: Title of the filter window in the guild roster menu
+    self.labelControl:SetText(gettext("Badge Filter"))
     self.listControl = control:GetNamedChild("List")
     self.fragment = ZO_SimpleSceneFragment:New(window)
     self.control = control
@@ -66,40 +67,49 @@ function FilterWindow:InitializeButtons(saveData)
     optionsButton:SetHandler("OnClicked", function(control)
         ClearMenu()
 
-        AddCustomMenuItem(L["MENU_REFRESH_BADGES"], function() self:Update(true) end)
+        -- TRANSLATORS: Entry in the options menu of the filter window for rescanning the roster for badges
+        AddCustomMenuItem(gettext("Refresh Badges"), function() self:Update(true) end)
 
         if(saveData.showScannedBadges) then
-            AddCustomMenuItem(L["MENU_DEFINED_BADGES"], function()
+            -- TRANSLATORS: Entry in the options menu of the filter window for showing badges from the data file for the current guild
+            AddCustomMenuItem(gettext("Show Defined Badges"), function()
                 saveData.showScannedBadges = false
                 self:Update()
             end)
         else
-            AddCustomMenuItem(L["MENU_SCANNED_BADGES"], function()
+            -- TRANSLATORS: Entry in the options menu of the filter window for showing badges found in the roster for the current guild
+            AddCustomMenuItem(gettext("Show Scanned Badges"), function()
                 saveData.showScannedBadges = true
                 self:Update()
             end)
         end
 
         if(saveData.showMemberCount) then
-            AddCustomMenuItem(L["MENU_HIDE_MEMBERCOUNT"], function()
+            -- TRANSLATORS: Entry in the options menu of the filter window for hiding the member count on each badge
+            AddCustomMenuItem(gettext("Hide Member Count"), function()
                 saveData.showMemberCount = false
                 self:Update()
             end)
         else
-            AddCustomMenuItem(L["MENU_SHOW_MEMBERCOUNT"], function()
+            -- TRANSLATORS: Entry in the options menu of the filter window for showing the member count on each badge
+            AddCustomMenuItem(gettext("Showing Member Count"), function()
                 saveData.showMemberCount = true
                 self:Update()
             end)
         end
 
         if(self:IsLocked()) then
-            AddCustomMenuItem(L["MENU_UNLOCK_WINDOW"], function() self:Unlock() end)
+            -- TRANSLATORS: Entry in the options menu of the filter window to unlock the position of the window so it can be moved around
+            AddCustomMenuItem(gettext("Unlock Window"), function() self:Unlock() end)
         else
-            AddCustomMenuItem(L["MENU_LOCK_WINDOW"], function() self:Lock() end)
-            AddCustomMenuItem(L["MENU_RESET_WINDOW"], function() self:ResetPosition() end)
+            -- TRANSLATORS: Entry in the options menu of the filter window to lock the position of the window
+            AddCustomMenuItem(gettext("Lock Window"), function() self:Lock() end)
+            -- TRANSLATORS: Entry in the options menu of the filter window to reset the position of the window
+            AddCustomMenuItem(gettext("Reset Window"), function() self:ResetPosition() end)
         end
 
-        AddCustomMenuItem(L["MENU_HIDE_WINDOW"], function()
+        -- TRANSLATORS: Entry in the options menu of the filter window to hide the window
+        AddCustomMenuItem(gettext("Hide Window"), function()
             self:Disable()
         end)
 
@@ -119,7 +129,8 @@ function FilterWindow:InitializeButtons(saveData)
         InitializeTooltip(InformationTooltip)
         InformationTooltip:ClearAnchors()
         InformationTooltip:SetOwner(control, BOTTOM, 0, 0)
-        InformationTooltip:AddLine(L["TOOLTIP_MAIN_ICON"], "", r, g, b)
+        -- TRANSLATORS: Tooltip for the button in the guild roster menu to show or hide the filter window
+        InformationTooltip:AddLine(gettext("Toggle Aetherius Badge Filter Window"), "", r, g, b)
     end)
     toggleWindowButton:SetHandler("OnMouseExit", function(control)
         ClearTooltip(InformationTooltip)
@@ -236,7 +247,8 @@ function FilterWindow:InitializeScrollList(listControl, filter)
     ZO_ScrollList_AddResizeOnScreenResize(listControl)
 
     self.emptyRow = CreateControlFromVirtual("$(parent)EmptyRow", listControl, "ZO_SortFilterListEmptyRow")
-    GetControl(self.emptyRow, "Message"):SetText(L["WINDOW_NO_BADGES"])
+    -- TRANSLATORS: Text shown in the filter window when there are no badges for the current guild
+    GetControl(self.emptyRow, "Message"):SetText(gettext("No Badges found"))
 end
 
 function FilterWindow:Update(forced)

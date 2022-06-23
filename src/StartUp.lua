@@ -1,7 +1,9 @@
 local ADDON_NAME = "AetheriusBadgeFilter"
 local ABF = {
     class = {},
-    internal = {}
+    internal = {
+        gettext = LibGetText(ADDON_NAME).gettext
+    }
 }
 _G[ADDON_NAME] = ABF
 local class = ABF.class

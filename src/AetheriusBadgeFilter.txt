@@ -3,7 +3,7 @@
 ## Version: @VERSION_NUMBER@
 ## APIVersion: @API_VERSION@
 ## AddOnVersion: @BUILD_NUMBER@
-## DependsOn: LibCustomMenu
+## DependsOn: LibCustomMenu>=680 LibGetText>=10
 ## SavedVariables: AetheriusBadgeFilter_Data
 
 ; This Add-on is not created by, affiliated with or sponsored by ZeniMax Media Inc. or its affiliates. 

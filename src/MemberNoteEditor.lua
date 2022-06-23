@@ -1,6 +1,6 @@
 local ABF = AetheriusBadgeFilter
 local internal = ABF.internal
-local L = internal.Localization
+local gettext = internal.gettext
 
 local MemberNoteEditor = ZO_InitializingObject:Subclass()
 ABF.class.MemberNoteEditor = MemberNoteEditor
@@ -82,19 +82,23 @@ function MemberNoteEditor:Initialize(guilds, saveData, filter, guildRosterScene,
         elseif(button == MOUSE_BUTTON_INDEX_RIGHT) then
             ClearMenu()
             if(badgeData.info and (not badgeData.info.limit or badgeData.info.limit > 1)) then
-                AddCustomMenuItem(L["MEMBER_EDITOR_INCREMENT"], function()
+                -- TRANSLATORS: Entry for incrementing a badge value in the badge editor context menu
+                AddCustomMenuItem(gettext("Increment"), function()
                     self:IncrementBadgeCount(badgeData)
                 end)
-                AddCustomMenuItem(L["MEMBER_EDITOR_DECREMENT"], function()
+                -- TRANSLATORS: Entry for decrementing a badge value in the badge editor context menu
+                AddCustomMenuItem(gettext("Decrement"), function()
                     self:DecrementBadgeCount(badgeData)
                 end)
             end
             if(badgeData.info and badgeData.info.color and badgeData.info.color ~= badgeData.color) then
-                AddCustomMenuItem(L["MEMBER_EDITOR_UPDATE_COLOR"], function()
+                -- TRANSLATORS: Entry for updating a badge color in the badge editor context menu
+                AddCustomMenuItem(gettext("Update Color"), function()
                     self:FixBadgeColor(badgeData)
                 end)
             end
-            AddCustomMenuItem(L["MEMBER_EDITOR_REMOVE"], function()
+            -- TRANSLATORS: Entry for updating a badge color in the badge editor context menu
+            AddCustomMenuItem(gettext("Remove"), function()
                 self:RemoveBadge(badgeData)
             end)
             ShowMenu(control)
