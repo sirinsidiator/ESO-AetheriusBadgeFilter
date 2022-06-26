@@ -1,97 +1,98 @@
-# sirinsidiator <sir@insidi.at>, 2022.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR sirinsidiator
+# This file is distributed under the same license as the AetheriusBadgeFilter package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: AetheriusBadgeFilter\n"
 "Report-Msgid-Bugs-To: https://weblate.sir.insidi.at/or/projects/"
 "aetheriusbadgefilter/messages/\n"
 "POT-Creation-Date: 2022-06-26 18:54+0000\n"
-"PO-Revision-Date: 2022-06-23 23:09+0000\n"
-"Last-Translator: sirinsidiator <sir@insidi.at>\n"
-"Language-Team: English <https://weblate.sir.insidi.at/or/projects/"
-"aetheriusbadgefilter/messages/en/>\n"
-"Language: en\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: kr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.13\n"
 
 #. TRANSLATORS: Title of the filter window in the guild roster menu
 #: src/FilterWindow.lua:47
 msgid "Badge Filter"
-msgstr "Badge Filter"
+msgstr ""
 
 #. TRANSLATORS: Entry in the options menu of the filter window for rescanning the roster for badges
 #: src/FilterWindow.lua:71
 msgid "Refresh Badges"
-msgstr "Refresh Badges"
+msgstr ""
 
 #. TRANSLATORS: Entry in the options menu of the filter window for showing badges from the data file for the current guild
 #: src/FilterWindow.lua:75
 msgid "Show Defined Badges"
-msgstr "Show Defined Badges"
+msgstr ""
 
 #. TRANSLATORS: Entry in the options menu of the filter window for showing badges found in the roster for the current guild
 #: src/FilterWindow.lua:81
 msgid "Show Scanned Badges"
-msgstr "Show Scanned Badges"
+msgstr ""
 
 #. TRANSLATORS: Entry in the options menu of the filter window for hiding the member count on each badge
 #: src/FilterWindow.lua:89
 msgid "Hide Member Count"
-msgstr "Hide Member Count"
+msgstr ""
 
 #. TRANSLATORS: Entry in the options menu of the filter window for showing the member count on each badge
 #: src/FilterWindow.lua:95
 msgid "Showing Member Count"
-msgstr "Showing Member Count"
+msgstr ""
 
 #. TRANSLATORS: Entry in the options menu of the filter window to unlock the position of the window so it can be moved around
 #: src/FilterWindow.lua:103
 msgid "Unlock Window"
-msgstr "Unlock Window"
+msgstr ""
 
 #. TRANSLATORS: Entry in the options menu of the filter window to lock the position of the window
 #: src/FilterWindow.lua:106
 msgid "Lock Window"
-msgstr "Lock Window"
+msgstr ""
 
 #. TRANSLATORS: Entry in the options menu of the filter window to reset the position of the window
 #: src/FilterWindow.lua:108
 msgid "Reset Window"
-msgstr "Reset Window"
+msgstr ""
 
 #. TRANSLATORS: Entry in the options menu of the filter window to hide the window
 #: src/FilterWindow.lua:112
 msgid "Hide Window"
-msgstr "Hide Window"
+msgstr ""
 
 #. TRANSLATORS: Tooltip for the button in the guild roster menu to show or hide the filter window
 #: src/FilterWindow.lua:133
 msgid "Toggle Aetherius Badge Filter Window"
-msgstr "Toggle Aetherius Badge Filter Window"
+msgstr ""
 
 #. TRANSLATORS: Text shown in the filter window when there are no badges for the current guild
 #: src/FilterWindow.lua:251
 msgid "No Badges found"
-msgstr "No Badges found"
+msgstr ""
 
 #. TRANSLATORS: Entry for incrementing a badge value in the badge editor context menu
 #: src/MemberNoteEditor.lua:86
 msgid "Increment"
-msgstr "Increment"
+msgstr ""
 
 #. TRANSLATORS: Entry for decrementing a badge value in the badge editor context menu
 #: src/MemberNoteEditor.lua:90
 msgid "Decrement"
-msgstr "Decrement"
+msgstr ""
 
 #. TRANSLATORS: Entry for updating a badge color in the badge editor context menu
 #: src/MemberNoteEditor.lua:96
 msgid "Update Color"
-msgstr "Update Color"
+msgstr ""
 
 #. TRANSLATORS: Entry for updating a badge color in the badge editor context menu
 #: src/MemberNoteEditor.lua:101
 msgid "Remove"
-msgstr "Remove"
+msgstr ""
